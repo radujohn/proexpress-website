@@ -133,7 +133,15 @@ export async function POST(request, { params }) {
         status: 'new',
         created_at: new Date().toISOString(),
       }
+
+      // ── 1. Save to MongoDB first ────────────────────────────────────────────
       await db.collection('contacts').insertOne(doc)
+
+      // ── 2. Fire-and-forget email ────────────────────────────────────────────
+      sendContactNotification(doc).catch((err) =>
+        console.error('[ProExpress Email] Unhandled contact notification error:', err.message)
+      )
+
       return NextResponse.json({ success: true, id: doc.id })
     } catch (err) {
       return NextResponse.json({ error: err.message }, { status: 500 })
