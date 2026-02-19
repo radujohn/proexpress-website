@@ -186,11 +186,14 @@ backend:
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Tested - PATCH with {status:'contacted'} updates the lead in MongoDB."
+      - working: true
+        agent: "testing"
+        comment: "Lead status update fully tested - PATCH /api/admin/leads/:id successfully updates status in MongoDB. Verified status change by re-fetching data. Authentication required and working. Returns {success:true}."
 
   - task: "DELETE /api/admin/leads/:id and contacts/:id"
     implemented: true
