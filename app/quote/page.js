@@ -2,9 +2,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Phone, Send, CheckCircle2, Loader2 } from 'lucide-react'
+import { useCmsContent } from '@/hooks/useCmsContent'
 
-const PHONE = '414-324-9699'
-const TEL = 'tel:4143249699'
+const defaultQuote = {
+  heroTitle: 'Get a Free Expedite Freight Quote',
+  heroSubtitle: 'Tell us about your time-critical shipment — sprinter van, cargo van, or straight truck — and a ProExpress logistics specialist will respond within minutes with a competitive quote.',
+  sidebarTitle: 'Need It Faster?',
+  sidebarSubtitle: 'Skip the form and talk to a dispatcher right now. We quote over the phone in under 2 minutes.',
+  sidebarPhone: '414-324-9699',
+  sidebarNote: 'Available 24/7/365 — including holidays',
+}
+
+const toTel = (phone) => 'tel:' + (phone || '').replace(/\D/g, '')
 
 export default function QuotePage() {
   const [form, setForm] = useState({
@@ -16,6 +25,9 @@ export default function QuotePage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
+  const cms = useCmsContent('quote_page', defaultQuote)
+  const sidebarPhone = cms.sidebarPhone || defaultQuote.sidebarPhone
+  const sidebarTel = toTel(sidebarPhone)
 
   const update = (field) => (e) => setForm(prev => ({ ...prev, [field]: e.target.value }))
 
