@@ -157,7 +157,7 @@ export default function QuotePage() {
                   <p className="text-gray-500 text-xs leading-relaxed">
                     <strong className="text-navy font-semibold">Your information is private and will never be shared.</strong>{' '}
                     We&apos;ll respond within 1 business hour — or call us now at{' '}
-                    <a href="tel:4143249699" className="text-electric font-semibold hover:underline">414-324-9699</a>.
+                    <a href={sidebarTel} className="text-electric font-semibold hover:underline">{sidebarPhone}</a>.
                   </p>
                 </div>
               </form>
