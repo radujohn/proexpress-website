@@ -123,7 +123,7 @@ export default function Navbar() {
                 <Truck className="w-4 h-4 text-white" />
               </div>
               <span className="font-heading font-800 text-white text-lg">
-                Pro<span className="text-electric">Express</span>
+                Pro<span className="text-electric">{logoText}</span>
               </span>
             </Link>
             <button onClick={() => setMobileOpen(false)} className="p-2 text-white/70 hover:text-white">
