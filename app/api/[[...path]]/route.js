@@ -2,10 +2,8 @@ import { NextResponse } from 'next/server'
 import clientPromise, { getDbName } from '@/lib/mongodb'
 import { v4 as uuidv4 } from 'uuid'
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
-if (!ADMIN_PASSWORD) {
-  console.warn('[ProExpress] WARNING: ADMIN_PASSWORD environment variable is not set. Admin login will be disabled.')
-}
+// ADMIN_PASSWORD is read from process.env.ADMIN_PASSWORD at runtime on every request.
+// Set this variable in your .env file — see README for instructions.
 
 function verifyAuth(request) {
   const pwd = process.env.ADMIN_PASSWORD
