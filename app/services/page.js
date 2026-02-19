@@ -75,17 +75,17 @@ export default function ServicesPage() {
               </div>
               <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">Sprinter Van / Cargo Van</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-lg">
-                When your urgent shipment is too important for a standard carrier but doesn\'t require a full truck, our Sprinter Van and Cargo Van service is your answer. Ideal for smaller critical loads that need to move fast — same day, door-to-door, no terminals.
+                Our sprinter van shipping and cargo van delivery service is engineered for time-critical freight that can&apos;t wait. ProExpress provides same-day freight delivery with a dedicated vehicle dispatched directly from pickup to destination — no freight terminals, no co-loading, no delays. Ideal for any business that needs a trusted Milwaukee expedite carrier with regional and national reach.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Capacity up to 2,500 lbs and 200 cubic feet',
-                  'Same-day dispatch within 30–90 minutes',
-                  'Door-to-door dedicated service — no transfers',
-                  'Local, regional, and cross-state deliveries',
-                  'Climate-friendly, fuel-efficient fleet',
-                  'Real-time driver communication throughout delivery',
-                  'Ideal for medical supplies, automotive parts, electronics',
+                  'Sprinter van shipping up to 2,500 lbs and 200 cu ft',
+                  'Same-day freight delivery — dispatch in 1–2 hours',
+                  'Cargo van delivery direct door-to-door, no terminals',
+                  'Local Milwaukee runs and cross-state regional routes',
+                  'Fuel-efficient, late-model sprinter van fleet',
+                  'Direct driver communication throughout your expedite',
+                  'Automotive parts, medical supplies, electronics, and more',
                 ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
