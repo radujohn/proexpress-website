@@ -315,9 +315,9 @@ export default function HomePage() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="font-heading font-900 text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-              Ready to Ship? We&apos;re Standing By.
+              Ready to Ship? Our 24/7 Expedited Freight Team Is Standing By.
             </h2>
-            <p className="text-white/60 text-lg mb-8">Dispatch available in 30–90 minutes. Call now or request a quote online.</p>
+            <p className="text-white/60 text-lg mb-8">Nationwide expedite trucking dispatched in 1–2 hours. Call Milwaukee&apos;s trusted expedite carrier now or request a quote online.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/quote"
