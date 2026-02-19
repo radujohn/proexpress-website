@@ -143,8 +143,8 @@ export default function ContactPage() {
               <div className="bg-navy rounded-2xl p-6 text-center">
                 <h3 className="font-heading font-800 text-lg text-white mb-1">Call Us Directly</h3>
                 <p className="text-white/60 text-sm mb-4">Our dispatch is always available — no hold times, no voicemail.</p>
-                <a href={TEL} className="flex items-center justify-center gap-2 w-full py-4 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/30 min-h-[56px] text-lg">
-                  <Phone className="w-5 h-5" />{PHONE}
+                  <a href={tel} className="flex items-center justify-center gap-2 w-full py-4 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/30 min-h-[56px] text-lg">
+                  <Phone className="w-5 h-5" />{phone}
                 </a>
               </div>
 
