@@ -77,7 +77,7 @@ export default function QuotePage() {
                 <h2 className="font-heading font-800 text-2xl text-navy mb-2">Quote Request Received!</h2>
                 <p className="text-gray-500 mb-6">Our team will reach out within minutes. For urgent needs, call us right now.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a href={TEL} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-electric text-white font-bold rounded-xl min-h-[48px] w-full sm:w-auto"><Phone className="w-4 h-4" />Call {PHONE}</a>
+                  <a href={sidebarTel} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-electric text-white font-bold rounded-xl min-h-[48px] w-full sm:w-auto"><Phone className="w-4 h-4" />Call {sidebarPhone}</a>
                   <button onClick={() => setSuccess(false)} className="px-6 py-3.5 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all min-h-[48px] w-full sm:w-auto">Submit Another</button>
                 </div>
               </div>
