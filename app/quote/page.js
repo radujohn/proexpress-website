@@ -167,16 +167,16 @@ export default function QuotePage() {
           {/* SIDEBAR */}
           <div className="space-y-5">
             <div className="bg-navy rounded-2xl p-6 text-center sticky top-24">
-              <h3 className="font-heading font-800 text-lg text-white mb-2">Need It Faster?</h3>
-              <p className="text-white/60 text-sm mb-5">Skip the form and talk to a dispatcher right now. We quote over the phone in under 2 minutes.</p>
+              <h3 className="font-heading font-800 text-lg text-white mb-2">{cms.sidebarTitle}</h3>
+              <p className="text-white/60 text-sm mb-5">{cms.sidebarSubtitle}</p>
               <a
-                href={TEL}
+                href={sidebarTel}
                 className="flex items-center justify-center gap-2 w-full py-4 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/30 min-h-[56px] text-lg"
               >
                 <Phone className="w-5 h-5" />
-                {PHONE}
+                {sidebarPhone}
               </a>
-              <p className="text-white/40 text-xs mt-3">Available 24/7/365 — including holidays</p>
+              <p className="text-white/40 text-xs mt-3">{cms.sidebarNote}</p>
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
