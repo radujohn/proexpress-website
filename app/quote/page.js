@@ -50,8 +50,8 @@ export default function QuotePage() {
     <div className="min-h-screen bg-light-gray pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h1 className="font-heading font-900 text-3xl sm:text-4xl lg:text-5xl text-navy mb-3">Request a Free Quote</h1>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">Fill out the form and a ProExpress logistics specialist will respond within minutes.</p>
+          <h1 className="font-heading font-900 text-3xl sm:text-4xl lg:text-5xl text-navy mb-3">Get a Free Expedite Freight Quote</h1>
+          <p className="text-gray-500 text-lg max-w-xl mx-auto">Tell us about your time-critical shipment — sprinter van, cargo van, or straight truck — and a ProExpress logistics specialist will respond within minutes with a competitive quote.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
