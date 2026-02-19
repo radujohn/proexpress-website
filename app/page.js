@@ -46,10 +46,10 @@ const testimonials = [
 ]
 
 const pillars = [
-  { icon: Award, label: 'Experience', desc: '20+ years delivering excellence in expedite freight across the Midwest and nationwide.' },
-  { icon: Zap, label: 'Speed', desc: 'Same-day dispatch in 30–90 minutes. We move when every minute counts for your business.' },
-  { icon: Shield, label: 'Reliability', desc: '99.8% on-time delivery rate. Your freight arrives when promised — every single time.' },
-  { icon: Globe, label: 'Coverage', desc: 'From local Milwaukee runs to nationwide coast-to-coast hauls across all 48 states.' },
+  { icon: Award, label: 'Experience', desc: '20+ years as a Milwaukee expedite carrier. Built on delivering time-critical freight reliably for manufacturers, healthcare systems, and retailers across the US.' },
+  { icon: Zap, label: 'Speed', desc: 'Same-day freight delivery with dispatch in as little as 1\u20132 hours. When your production line needs it now, ProExpress moves.' },
+  { icon: Shield, label: 'Reliability', desc: '99.8% on-time delivery rate across all 24/7 expedited freight runs. Your shipment arrives when promised \u2014 guaranteed.' },
+  { icon: Globe, label: 'Coverage', desc: 'Nationwide expedite trucking across all 48 contiguous states. Local Milwaukee cargo van delivery to full cross-country straight truck freight hauls.' },
 ]
 
 const faqSchema = {
