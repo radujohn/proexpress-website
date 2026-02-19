@@ -694,14 +694,17 @@ function QuotePageEditor({ data, onChange }) {
 
 const SECTIONS = [
   { key: 'site_settings',    label: 'Site Settings',       icon: Settings,    desc: 'Phone, email, address, social links, footer text' },
-  { key: 'nav_links',        label: 'Navigation',          icon: Navigation,  desc: 'Header and mobile menu links' },
+  { key: 'navbar_content',   label: 'Navbar',              icon: Navigation,  desc: 'Logo text, phone number & all navigation links' },
+  { key: 'footer_content',   label: 'Footer',              icon: Globe,       desc: 'Tagline, contact info, social links, quick links, copyright' },
   { key: 'home_hero',        label: 'Home — Hero',         icon: Home,        desc: 'Hero headline, subtitle, and CTA buttons' },
   { key: 'home_cta',         label: 'Home — Bottom CTA',   icon: Home,        desc: 'Bottom call-to-action section' },
   { key: 'home_testimonials',label: 'Testimonials',        icon: Users,       desc: 'Client testimonial cards' },
   { key: 'home_faqs',        label: 'Home FAQs',           icon: HelpCircle,  desc: 'FAQ accordion on the home page' },
   { key: 'services_page',    label: 'Services Page',       icon: Wrench,      desc: 'Sprinter van and straight truck content' },
-  { key: 'about_page',       label: 'About Us Page',       icon: Globe,       desc: 'Story, stats, team, values' },
+  { key: 'about_page',       label: 'About Us Page',       icon: Users,       desc: 'Story, stats, team, values' },
   { key: 'faq_page',         label: 'FAQ Page',            icon: HelpCircle,  desc: 'All FAQ categories and questions' },
+  { key: 'contact_page',     label: 'Contact Page',        icon: Settings,    desc: 'Phone, email, address, hours, map embed URL' },
+  { key: 'quote_page',       label: 'Quote Page',          icon: Wrench,      desc: 'Headline, subtitle and sidebar call-to-action' },
 ]
 
 // ─── Main CmsTab export ────────────────────────────────────────────────────────
