@@ -44,7 +44,11 @@
 
 @layer base {
   * { @apply border-border; }
-  body { @apply bg-background text-foreground font-sans; }
+  html { overflow-x: hidden; }
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
   h1, h2, h3, h4, h5, h6 { @apply font-heading; }
 }
 
