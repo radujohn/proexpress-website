@@ -54,7 +54,7 @@ export default function Navbar() {
                 <Truck className="w-5 h-5 text-white" />
               </div>
               <span className="font-heading font-900 text-xl text-white">
-                Pro<span className="text-electric">Express</span>
+                Pro<span className="text-electric">{logoText}</span>
               </span>
             </Link>
 
