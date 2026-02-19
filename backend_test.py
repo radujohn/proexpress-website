@@ -14,7 +14,7 @@ import os
 from datetime import datetime
 
 # Base URL from environment
-BASE_URL = "https://proexpress-preview.preview.emergentagent.com"
+BASE_URL = "https://proexpress-preview-1.preview.emergentagent.com"
 API_URL = f"{BASE_URL}/api"
 ADMIN_PASSWORD = "proexpress2025"
 
