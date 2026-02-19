@@ -134,12 +134,7 @@ export default function ServicesPage() {
               </ul>
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25"
-              >
-                Request a Quote <ArrowRight className="w-5 h-5" />
-              </Link>
-            </AnimatedSection>
-            <AnimatedSection className="order-1 lg:order-2">
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25 min-h-[48px] w-full sm:w-auto"
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                 <Image
                   src="https://images.pexels.com/photos/29057946/pexels-photo-29057946.jpeg?auto=compress&cs=tinysrgb&w=900"
