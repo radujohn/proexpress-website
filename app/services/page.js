@@ -155,8 +155,8 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-10">
-            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">Nationwide Coverage</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">ProExpress serves all 48 contiguous United States. From Milwaukee to Miami, Seattle to Dallas — we cover every mile.</p>
+            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">Nationwide Expedite Trucking Coverage</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">ProExpress operates nationwide expedite trucking routes across all 48 contiguous United States. From same-day Milwaukee cargo van delivery to multi-day cross-country straight truck freight runs — we cover every corridor.</p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <div className="relative rounded-2xl overflow-hidden bg-navy/5 border-2 border-dashed border-navy/20 flex items-center justify-center" style={{ minHeight: 340 }}>
