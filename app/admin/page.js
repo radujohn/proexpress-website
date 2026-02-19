@@ -248,6 +248,14 @@ export default function AdminPage() {
                 <Users className="w-4 h-4" /> Contact Forms
                 <span className="ml-1 px-1.5 py-0.5 bg-electric text-white text-xs rounded-full">{contacts.filter(c=>c.status==='new').length}</span>
               </button>
+              <button
+                onClick={() => setActiveTab('content')}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  activeTab === 'content' ? 'bg-white text-navy shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                <Layout className="w-4 h-4" /> Content
+              </button>
             </div>
 
             {/* Search + Filter */}
