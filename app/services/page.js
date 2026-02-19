@@ -135,6 +135,11 @@ export default function ServicesPage() {
               <Link
                 href="/quote"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25 min-h-[48px] w-full sm:w-auto"
+              >
+                Request a Quote <ArrowRight className="w-5 h-5" />
+              </Link>
+            </AnimatedSection>
+            <AnimatedSection className="order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                 <Image
                   src="https://images.pexels.com/photos/29057946/pexels-photo-29057946.jpeg?auto=compress&cs=tinysrgb&w=900"
@@ -147,6 +152,31 @@ export default function ServicesPage() {
                 </div>
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BADGES */}
+      <section className="py-14 bg-white border-t border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <AnimatedSection className="text-center mb-7">
+            <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Why Businesses Trust ProExpress</span>
+          </AnimatedSection>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { icon: '🛡️', label: 'Fully Licensed', desc: 'FMCSA-authorized carrier' },
+              { icon: '✅', label: 'Fully Insured', desc: 'Full cargo & liability coverage' },
+              { icon: '⭐', label: '20+ Years Experience', desc: 'Two decades of expedite excellence' },
+              { icon: '🕐', label: '24/7 Dispatch Available', desc: 'Always on — no holidays, no weekends' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div className="flex flex-col items-center text-center p-4 rounded-2xl bg-light-gray border border-gray-100 hover:border-electric/20 transition-colors h-full">
+                  <span className="text-2xl mb-2">{item.icon}</span>
+                  <h3 className="font-heading font-800 text-navy text-sm mb-1 leading-tight">{item.label}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
