@@ -386,13 +386,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "POST /api/quote - Save quote request to MongoDB"
-    - "POST /api/contact - Save contact form to MongoDB"
-    - "POST /api/admin/login - Password authentication"
-    - "GET /api/admin/leads - Fetch all quote leads"
-    - "PATCH /api/admin/leads/:id - Update lead status"
-    - "DELETE /api/admin/leads/:id and contacts/:id"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
