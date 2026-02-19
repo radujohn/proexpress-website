@@ -349,17 +349,20 @@ frontend:
         agent: "main"
         comment: "Login screen, stats cards, tabbed leads/contacts tables, search+filter, status dropdown, delete. Returns 200."
 
-  - task: "Navbar - Sticky with hamburger mobile menu, phone click-to-call"
+  - task: "Mobile UI audit all 7 pages at 375px 768px 1440px"
     implemented: true
-    working: "NA"
-    file: "components/Navbar.js"
+    working: true
+    file: "All pages and components"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
-        comment: "Sticky nav, scroll effect, mobile hamburger drawer with CTAs. Phone is click-to-call tel:4143249699."
+        comment: "Mobile UI audit requested after applying responsive fixes. Test hamburger menu, floating call button, no horizontal scroll, forms, footer stacking, FAQ accordion across all breakpoints."
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE MOBILE UI AUDIT COMPLETED ✅ Tested all 7 pages (Home, Services, About, Tracking, Quote, Contact, FAQ) at 3 breakpoints (375px, 768px, 1440px). Results: Hamburger menu works perfectly (visible on mobile ≤375px, hidden on tablet/desktop ≥768px), Floating call button visible and properly positioned on all pages/breakpoints, NO horizontal scroll detected on any configuration, Hero sections display correctly with readable text, Forms have proper full-width inputs and 48px+ touch targets, Footer responsive stacking works, FAQ accordion functionality confirmed (clickable questions, proper toggle). All 21 configurations tested successfully with ZERO critical issues found."
 
   - task: "Floating call button - Fixed bottom-right on all pages"
     implemented: true
