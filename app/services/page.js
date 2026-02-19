@@ -3,9 +3,39 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, CheckCircle2, ArrowRight, MapPin, Truck, Package } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
+import { useCmsContent } from '@/hooks/useCmsContent'
 
 const PHONE = '414-324-9699'
 const TEL = 'tel:4143249699'
+
+const defaultServices = {
+  heroTitle: 'Expedite Freight Services Built for Speed',
+  heroSubtitle: 'Sprinter van shipping, cargo van delivery, and straight truck freight \u2014 two specialized services with one mission: your time-critical freight arrives on schedule, every time.',
+  sprinterTitle: 'Sprinter Van / Cargo Van',
+  sprinterDesc: "Our sprinter van shipping and cargo van delivery service is engineered for time-critical freight that can\u2019t wait. ProExpress provides same-day freight delivery with a dedicated vehicle dispatched directly from pickup to destination \u2014 no freight terminals, no co-loading, no delays.",
+  sprinterFeatures: [
+    'Sprinter van shipping up to 2,500 lbs and 200 cu ft',
+    'Same-day freight delivery \u2014 dispatch in 1\u20132 hours',
+    'Cargo van delivery direct door-to-door, no terminals',
+    'Local Milwaukee runs and cross-state regional routes',
+    'Fuel-efficient, late-model sprinter van fleet',
+    'Direct driver communication throughout your expedite',
+    'Automotive parts, medical supplies, electronics, and more',
+  ],
+  straightTitle: 'Straight Truck',
+  straightDesc: 'ProExpress straight truck freight service handles medium to large time-critical loads that demand expedite speed at scale. As a Milwaukee expedite carrier with nationwide expedite trucking capability, we deploy straight trucks for regional corridor hauls and full coast-to-coast runs \u2014 with team drivers available for nonstop 24/7 expedited freight delivery when every hour counts.',
+  straightFeatures: [
+    'Straight truck freight up to 10,000 lbs and 1,600 cu ft',
+    'Team drivers for nonstop 24/7 expedited freight runs',
+    'Nationwide expedite trucking across all 48 states',
+    'Lift gate service available on equipped units',
+    'Dedicated straight truck \u2014 your freight only, no co-loading',
+    'Manufacturing, construction, retail, and aerospace loads',
+    'Electronic logging for transparent, real-time delivery status',
+  ],
+  ctaTitle: 'Need It There Fast?',
+  ctaSubtitle: 'Our dispatch team is standing by right now. Get your quote in minutes.',
+}
 
 const serviceSchema = {
   '@context': 'https://schema.org',
