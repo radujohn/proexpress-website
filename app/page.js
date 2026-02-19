@@ -105,7 +105,7 @@ export default function HomePage() {
                 Call ProExpress.
               </h1>
               <p className="text-white/70 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-                Same-day dispatch across 48 states. Sprinter vans and straight trucks ready to roll within minutes. Your critical freight delivered on time, every time — guaranteed.
+                ProExpress is Milwaukee&apos;s trusted expedite carrier — providing 24/7 expedited freight service with sprinter vans and straight trucks. Same-day freight delivery and nationwide expedite trucking across all 48 states, dispatched in as little as 1–2 hours.
               </p>
             </motion.div>
 
