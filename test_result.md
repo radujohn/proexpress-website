@@ -442,6 +442,69 @@ frontend:
         agent: "main"
         comment: "Organization schema in layout (all pages), FAQPage schema on home+faq, LocalBusiness on contact, Service on services, BreadcrumbList on services+about."
 
+  - task: "Services page - JSX syntax error fix (broken Straight Truck section)"
+    implemented: true
+    working: true
+    file: "app/services/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "JSX syntax error in Straight Truck section — Link tag was missing closing > and image div was nested inside it. Build-breaking error."
+      - working: true
+        agent: "main"
+        comment: "Fixed. Replaced entire broken Straight Truck section with corrected JSX. Also added trust badge block (4 items) below the section. All pages return 200 OK. Confirmed via curl."
+
+  - task: "Google Analytics 4 with cookie consent"
+    implemented: true
+    working: true
+    file: "components/GoogleAnalytics.js, components/CookieConsentBanner.js, app/layout.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created GoogleAnalytics component that reads NEXT_PUBLIC_GA_MEASUREMENT_ID from env, loads gtag scripts only after user accepts consent. Created CookieConsentBanner with dark navy background, Accept button (electric blue), Decline text link. Consent stored in localStorage. GA fires on accept via custom 'ga_consent_accepted' event. Both added to root layout. NEXT_PUBLIC_GA_MEASUREMENT_ID added to .env as empty placeholder."
+
+  - task: "Trust signals - Homepage Licensed/Insured/Experience badges"
+    implemented: true
+    working: true
+    file: "app/page.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 'Licensed, Bonded & Insured' badge row with 3 items (Fully Licensed, Fully Insured, 20+ Years Experience) just above the bottom CTA section. Confirmed in HTML via curl."
+
+  - task: "Trust signals - Services page badge block with 24/7 Dispatch"
+    implemented: true
+    working: true
+    file: "app/services/page.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 4-item trust badge block (Fully Licensed, Fully Insured, 20+ Years Experience, 24/7 Dispatch Available) between the Straight Truck section and the CTA. Confirmed in HTML via curl."
+
+  - task: "Quote page - Security note below submit button"
+    implemented: true
+    working: true
+    file: "app/quote/page.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added security note below submit button: '🔒 Your information is private and will never be shared. We'll respond within 1 business hour or call us now at 414-324-9699.' Confirmed in HTML via curl."
+
   - task: "Sitemap.xml and robots.txt"
     implemented: true
     working: true
