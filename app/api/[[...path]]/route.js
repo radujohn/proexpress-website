@@ -97,12 +97,32 @@ export async function POST(request, { params }) {
         return NextResponse.json({ error: 'Admin access is not configured. Set the ADMIN_PASSWORD environment variable.' }, { status: 503 })
       }
       if (password === pwd) {
-        // Return the password itself as the bearer token (compared on every request via verifyAuth)
         return NextResponse.json({ success: true, token: pwd })
       }
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 })
     } catch {
       return NextResponse.json({ error: 'Bad request' }, { status: 400 })
+    }
+  }
+
+  // ── CMS Save — auth required ────────────────────────────────────────────────
+  if (endpoint.startsWith('admin/cms/')) {
+    if (!verifyAuth(request)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+    const section = endpoint.replace('admin/cms/', '')
+    if (!section) return NextResponse.json({ error: 'Missing section' }, { status: 400 })
+    try {
+      const body = await request.json()
+      const db = await getDb()
+      await db.collection('cms_content').updateOne(
+        { section },
+        { $set: { section, data: body.data, updated_at: new Date().toISOString() } },
+        { upsert: true }
+      )
+      return NextResponse.json({ success: true })
+    } catch (err) {
+      return NextResponse.json({ error: err.message }, { status: 500 })
     }
   }
 
