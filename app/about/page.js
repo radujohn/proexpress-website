@@ -77,11 +77,11 @@ export default function AboutPage() {
                 <p>Over two decades, we\'ve built a large, modern fleet of Sprinter vans and straight trucks, a network of professional CDL drivers, and a 24/7 dispatch operation that never sleeps. We\'ve helped manufacturers prevent line shutdowns, hospitals receive critical supplies, and retailers keep shelves stocked — more than 100,000 deliveries and counting.</p>
                 <p>Today, ProExpress is a family of logistics professionals united by one purpose: when your business can\'t afford a delay, we show up. Every time. On time.</p>
               </div>
-              <div className="flex flex-wrap gap-3 mt-7">
-                <Link href="/quote" className="inline-flex items-center gap-2 px-6 py-3 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25">
+              <div className="flex flex-col sm:flex-row gap-3 mt-7">
+                <Link href="/quote" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25 min-h-[48px] w-full sm:w-auto">
                   Work With Us <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href={TEL} className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold rounded-xl transition-all">
+                <a href={TEL} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold rounded-xl transition-all min-h-[48px] w-full sm:w-auto">
                   <Phone className="w-4 h-4" /> {PHONE}
                 </a>
               </div>
