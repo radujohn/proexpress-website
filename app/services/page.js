@@ -95,7 +95,7 @@ export default function ServicesPage() {
               </ul>
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25 min-h-[48px] w-full sm:w-auto"
               >
                 Request a Quote <ArrowRight className="w-5 h-5" />
               </Link>
