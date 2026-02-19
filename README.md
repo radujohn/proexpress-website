@@ -120,6 +120,85 @@ password in `.env` committed to Git.
 
 ---
 
+## Setting Up Email Notifications (SMTP)
+
+All six SMTP variables must be present and correct for email to work.
+If any are missing, forms still save to MongoDB — no leads are lost.
+
+### Step 1 — Get SMTP credentials from your mail host
+
+Most business hosting providers (cPanel, Plesk, Zoho, etc.) let you create a
+dedicated SMTP account. The typical information you need:
+
+| Variable | Where to find it |
+|----------|-----------------|
+| `SMTP_HOST` | Mail server hostname in your hosting control panel, e.g. `mail.yourdomain.com` |
+| `SMTP_PORT` | Use **465** for implicit SSL/TLS or **587** for STARTTLS |
+| `SMTP_USER` | The full email address of the sending account, e.g. `notify@yourdomain.com` |
+| `SMTP_PASS` | The SMTP password — create one in cPanel → **Email Accounts → Connect Devices** |
+| `SMTP_FROM` | Display label + address: `ProExpress <notify@yourdomain.com>` |
+| `NOTIFY_EMAIL` | Where notifications go, e.g. `dispatch@proexpress.com` |
+
+> **Do not** use your webmail login password as `SMTP_PASS`. Create a separate
+> SMTP password/app password in your hosting control panel.
+
+### Step 2 — Add variables to `.env`
+
+```env
+SMTP_HOST=mail.yourdomain.com
+SMTP_PORT=587
+SMTP_USER=notify@yourdomain.com
+SMTP_PASS=generated-smtp-password
+SMTP_FROM=ProExpress <notify@yourdomain.com>
+NOTIFY_EMAIL=dispatch@yourdomain.com
+```
+
+### Step 3 — Restart
+
+```bash
+sudo supervisorctl restart nextjs
+```
+
+### Step 4 — Verify
+
+Submit a test quote at `/quote`. Within seconds you should receive an email at
+`NOTIFY_EMAIL`. Check server logs (`/var/log/supervisor/nextjs.out.log`) for
+`[ProExpress Email] Quote notification sent` or any error details.
+
+### Port reference
+
+| Port | Mode | When to use |
+|------|------|-------------|
+| `465` | Implicit TLS | Most modern cPanel / Plesk hosts |
+| `587` | STARTTLS | When 465 is blocked by firewall |
+| `25` | Plain (no encryption) | Avoid — usually blocked |
+
+### What the notification email contains
+
+**Quote request email:**
+- Subject: `New Quote Request — {Full Name} ({Company})`
+- Sections: Contact Info, Shipment Details (pickup/delivery/dates), Freight Info
+- Fields: Full Name, Company, Email, Phone, Pickup Location, Delivery Location,
+  Service Type, Freight Description, Weight, Pickup Date, Delivery Deadline, Notes
+- A prominent **"Call Lead Now: 414-324-9699"** button
+
+**Contact form email:**
+- Subject: `New Contact Message — {Name}`
+- Fields: Name, Email, Phone, Message
+- Same "Call Lead Now" button
+
+Both emails include a `Reply-To` header set to the submitter's email address so
+you can reply directly from your inbox.
+
+### Error handling guarantee
+
+The email is sent **after** MongoDB saves the record using `.catch()` — it never
+blocks the API response. Even if your SMTP server is down, the lead is saved and
+the form shows the user a success message. Check server logs to catch missed
+notifications.
+
+---
+
 ## Admin Dashboard (`/admin`)
 
 1. Navigate to `/admin`
