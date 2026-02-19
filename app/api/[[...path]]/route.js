@@ -70,8 +70,13 @@ export async function POST(request, { params }) {
   if (endpoint === 'admin/login') {
     try {
       const { password } = await request.json()
-      if (password === ADMIN_PASSWORD) {
-        return NextResponse.json({ success: true, token: ADMIN_PASSWORD })
+      const pwd = process.env.ADMIN_PASSWORD
+      if (!pwd) {
+        return NextResponse.json({ error: 'Admin access is not configured. Set the ADMIN_PASSWORD environment variable.' }, { status: 503 })
+      }
+      if (password === pwd) {
+        // Return the password itself as the bearer token (compared on every request via verifyAuth)
+        return NextResponse.json({ success: true, token: pwd })
       }
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 })
     } catch {
