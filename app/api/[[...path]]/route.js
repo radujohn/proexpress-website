@@ -28,6 +28,19 @@ export async function GET(request, { params }) {
     return NextResponse.json({ status: 'ok', service: 'ProExpress API', timestamp: new Date().toISOString() })
   }
 
+  // ── CMS Public Read — no auth required ─────────────────────────────────────
+  if (endpoint.startsWith('cms/')) {
+    const section = endpoint.replace('cms/', '')
+    if (!section) return NextResponse.json({ error: 'Missing section' }, { status: 400 })
+    try {
+      const db = await getDb()
+      const doc = await db.collection('cms_content').findOne({ section })
+      return NextResponse.json({ data: doc?.data ?? null })
+    } catch (err) {
+      return NextResponse.json({ data: null, error: err.message })
+    }
+  }
+
   if (!verifyAuth(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
