@@ -2,9 +2,19 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, Loader2 } from 'lucide-react'
+import { useCmsContent } from '@/hooks/useCmsContent'
 
-const PHONE = '414-324-9699'
-const TEL = 'tel:4143249699'
+const defaultContact = {
+  heroTitle: 'Contact ProExpress — 24/7 Expedite Freight Dispatch',
+  heroSubtitle: 'Our expedite transportation dispatch team is available 24 hours a day, 7 days a week, 365 days a year. Call us now or send a message for same-day freight delivery anywhere in the US.',
+  phone: '414-324-9699',
+  email: 'info@proexpress.com',
+  address: '1234 Industrial Dr\nMilwaukee, WI 53201',
+  hours: '24 Hours / 7 Days\n365 Days a Year',
+  mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93157.70744826024!2d-88.07664978779296!3d43.0388806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880502d7279cdc1b%3A0x7911d251b22a02b2!2sMilwaukee%2C%20WI!5e0!3m2!1sen!2sus!4v1718000000000!5m2!1sen!2sus',
+}
+
+const toTel = (phone) => 'tel:' + (phone || '').replace(/\D/g, '')
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -32,6 +42,14 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
+  const cms = useCmsContent('contact_page', defaultContact)
+
+  const phone = cms.phone || defaultContact.phone
+  const tel = toTel(phone)
+  const email = cms.email || defaultContact.email
+  const address = cms.address || defaultContact.address
+  const hours = cms.hours || defaultContact.hours
+  const mapUrl = cms.mapUrl || defaultContact.mapUrl
 
   const update = (field) => (e) => setForm(prev => ({ ...prev, [field]: e.target.value }))
 
