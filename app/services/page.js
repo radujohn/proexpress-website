@@ -136,20 +136,12 @@ export default function ServicesPage() {
               <div className="w-14 h-14 bg-electric/10 rounded-xl flex items-center justify-center mb-5">
                 <Truck className="w-7 h-7 text-electric" />
               </div>
-              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">Straight Truck</h2>
+              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">{cms.straightTitle}</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-lg">
-                ProExpress straight truck freight service handles medium to large time-critical loads that demand expedite speed at scale. As a Milwaukee expedite carrier with nationwide expedite trucking capability, we deploy straight trucks for regional corridor hauls and full coast-to-coast runs — with team drivers available for nonstop 24/7 expedited freight delivery when every hour counts.
+                {cms.straightDesc}
               </p>
               <ul className="space-y-3 mb-8">
-                {[
-                  'Straight truck freight up to 10,000 lbs and 1,600 cu ft',
-                  'Team drivers for nonstop 24/7 expedited freight runs',
-                  'Nationwide expedite trucking across all 48 states',
-                  'Lift gate service available on equipped units',
-                  'Dedicated straight truck — your freight only, no co-loading',
-                  'Manufacturing, construction, retail, and aerospace loads',
-                  'Electronic logging for transparent, real-time delivery status',
-                ].map((f, i) => (
+                {(cms.straightFeatures || []).map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                     {f}
