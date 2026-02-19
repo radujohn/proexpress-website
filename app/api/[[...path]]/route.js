@@ -73,6 +73,15 @@ export async function GET(request, { params }) {
     return NextResponse.json({ data: contacts, total, page, limit })
   }
 
+  // ── CMS Admin Read — list all sections ─────────────────────────────────────
+  if (endpoint === 'admin/cms') {
+    const db = await getDb()
+    const docs = await db.collection('cms_content').find({}).toArray()
+    const map = {}
+    docs.forEach(d => { map[d.section] = d.data })
+    return NextResponse.json({ data: map })
+  }
+
   return NextResponse.json({ error: 'Not found' }, { status: 404 })
 }
 
