@@ -105,20 +105,12 @@ export default function ServicesPage() {
               <div className="w-14 h-14 bg-electric/10 rounded-xl flex items-center justify-center mb-5">
                 <Package className="w-7 h-7 text-electric" />
               </div>
-              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">Sprinter Van / Cargo Van</h2>
+              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">{cms.sprinterTitle}</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-lg">
-                Our sprinter van shipping and cargo van delivery service is engineered for time-critical freight that can&apos;t wait. ProExpress provides same-day freight delivery with a dedicated vehicle dispatched directly from pickup to destination — no freight terminals, no co-loading, no delays. Ideal for any business that needs a trusted Milwaukee expedite carrier with regional and national reach.
+                {cms.sprinterDesc}
               </p>
               <ul className="space-y-3 mb-8">
-                {[
-                  'Sprinter van shipping up to 2,500 lbs and 200 cu ft',
-                  'Same-day freight delivery — dispatch in 1–2 hours',
-                  'Cargo van delivery direct door-to-door, no terminals',
-                  'Local Milwaukee runs and cross-state regional routes',
-                  'Fuel-efficient, late-model sprinter van fleet',
-                  'Direct driver communication throughout your expedite',
-                  'Automotive parts, medical supplies, electronics, and more',
-                ].map((f, i) => (
+                {(cms.sprinterFeatures || []).map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                     {f}
