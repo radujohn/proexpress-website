@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server'
 import clientPromise, { getDbName } from '@/lib/mongodb'
 import { v4 as uuidv4 } from 'uuid'
+import { sendQuoteNotification, sendContactNotification } from '@/lib/email'
 
 // ADMIN_PASSWORD is read from process.env.ADMIN_PASSWORD at runtime on every request.
-// Set this variable in your .env file — see README for instructions.
+// SMTP settings (SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS / SMTP_FROM / NOTIFY_EMAIL)
+// are read in lib/email.js — see README for full documentation.
 
 function verifyAuth(request) {
   const pwd = process.env.ADMIN_PASSWORD
