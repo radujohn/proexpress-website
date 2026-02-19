@@ -49,11 +49,43 @@ NEXT_PUBLIC_BASE_URL=https://your-domain.com
 #   - Rotate this value if you suspect it has been compromised
 #
 ADMIN_PASSWORD=change-me-before-going-to-production
+
+# -----------------------------------------------------------------------
+# EMAIL / SMTP (optional — all six variables must be set to enable email)
+# -----------------------------------------------------------------------
+# When all six variables below are present, ProExpress will send a
+# branded HTML notification email to NOTIFY_EMAIL whenever:
+#   • A quote request is submitted via /quote
+#   • A contact form is submitted via /contact
+#
+# If any variable is missing or SMTP delivery fails, the form submission
+# is still saved to MongoDB and the API returns success — leads are
+# never lost because of an email error.
+#
+# SMTP_HOST   — Your mail server hostname, e.g. mail.yourdomain.com
+# SMTP_PORT   — 465 for implicit TLS (recommended) or 587 for STARTTLS
+# SMTP_USER   — The username you authenticate with (usually an email address)
+# SMTP_PASS   — The SMTP account password (never your webmail login password)
+# SMTP_FROM   — Sender label shown in the inbox, e.g.:
+#                 ProExpress <notify@yourdomain.com>
+# NOTIFY_EMAIL — The address that receives every new lead notification
+#
+SMTP_HOST=mail.yourdomain.com
+SMTP_PORT=587
+SMTP_USER=notify@yourdomain.com
+SMTP_PASS=your-smtp-password
+SMTP_FROM=ProExpress <notify@yourdomain.com>
+NOTIFY_EMAIL=owner@yourdomain.com
 ```
 
-> **Security note:** If `ADMIN_PASSWORD` is not set, the `/api/admin/login` endpoint returns
-> `503 Service Unavailable` and no admin access is possible. All admin API routes
-> (`/api/admin/*`) require a valid `Authorization: Bearer <password>` header on every request.
+> **Security note — ADMIN_PASSWORD:** If `ADMIN_PASSWORD` is not set, the
+> `/api/admin/login` endpoint returns `503 Service Unavailable` and no admin
+> access is possible.
+
+> **Security note — SMTP_PASS:** Never use your webmail login password as the
+> SMTP password. Create a dedicated SMTP / app password for this account via
+> your hosting control panel (cPanel → Email Accounts → Connect Devices, or
+> equivalent). Rotate it periodically.
 
 ---
 
