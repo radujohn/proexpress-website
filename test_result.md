@@ -412,17 +412,23 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 1
-  run_ui: false
+  test_sequence: 2
+  run_ui: true
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Mobile UI audit all 7 pages at 375px 768px 1440px"
+    - "Navbar hamburger open close and drawer links"
+    - "Hero sections no overflow CTA buttons stack on mobile"
+    - "Forms full-width inputs and 48px touch targets"
+    - "Floating call button visible correct z-index"
+    - "Footer columns stack on mobile"
+    - "FAQ accordion touch interaction"
+    - "No horizontal scroll on any page"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
   - agent: "main"
-    message: "Added Nodemailer email notifications (lib/email.js). Key things to verify: (1) POST /api/quote still returns {success:true, id} even though SMTP env vars are NOT set — MongoDB save must succeed. (2) POST /api/contact same. (3) Confirm leads are retrievable via GET /api/admin/leads. Admin password is still 'proexpress2025'. SMTP vars are intentionally NOT set in .env so the graceful-skip path is what gets exercised. Do NOT try to test actual email delivery — just verify forms save and return success."
-  - agent: "testing"
-    message: "EMAIL NOTIFICATION TESTING COMPLETE ✅ All fire-and-forget contract requirements validated: (1) POST /api/quote & /api/contact return {success:true, id:<uuid>} with NO SMTP config. (2) Data saves to MongoDB correctly. (3) No 500 errors thrown. (4) Email notifications gracefully skip with console warnings. (5) Admin functionality unaffected (login, status updates working). Fire-and-forget pattern working as designed - forms succeed regardless of email status."
+    message: "Mobile UI audit and fixes applied. Test at https://proexpress-preview.preview.emergentagent.com — check all 7 pages at 375px 768px 1440px. Key fixes: overflow-x hidden on html+body, z-index layers corrected (overlay z-45, drawer z-55, floating btn z-40), AnimatedSection margin -40px, footer flex-wrap, About H1 no br tag, About+Services CTAs full-width on mobile with min-h-48px, FAQ headline smaller on mobile, success state buttons full-width. Focus on no horizontal scroll, hamburger works, forms full-width, accordion works."
