@@ -102,38 +102,56 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Build a complete production-ready website for ProExpress expedite transportation company with 7 pages (Home, Services, About, Tracking, Quote, Contact, FAQ), admin dashboard at /admin with password protection, MongoDB for form submissions, all phone numbers as click-to-call links, floating call button, mobile-first responsive design, JSON-LD SEO schemas, Framer Motion animations, sitemap.xml and robots.txt."
+user_problem_statement: "Build a complete production-ready website for ProExpress expedite transportation company with 7 pages. Email notifications via Nodemailer (business SMTP) when quote or contact forms are submitted. All SMTP config via env vars. Form saves to MongoDB must succeed even if email fails."
 
 backend:
-  - task: "POST /api/quote - Save quote request to MongoDB"
+  - task: "POST /api/quote - Save to MongoDB + fire-and-forget email notification"
     implemented: true
     working: true
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: true
         agent: "main"
-        comment: "Tested manually - POST /api/quote stores to MongoDB quotes collection with UUID id, all fields, status=new, created_at timestamp. Returns {success:true, id}"
-      - working: true
-        agent: "testing"
-        comment: "Comprehensive testing passed - Tested both full quote data and minimal data submission. All fields properly saved to MongoDB quotes collection. UUID generation working. Returns correct {success:true, id} format."
+        comment: "MongoDB save happens first. Then sendQuoteNotification(doc).catch() fires asynchronously. If SMTP is not configured (SMTP vars missing), email is skipped with console.warn and API still returns {success:true, id}. Previously tested by testing agent for MongoDB save."
 
-  - task: "POST /api/contact - Save contact form to MongoDB"
+  - task: "POST /api/contact - Save to MongoDB + fire-and-forget email notification"
     implemented: true
     working: true
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: true
         agent: "main"
-        comment: "Tested manually - POST /api/contact stores to MongoDB contacts collection. Returns {success:true, id}"
-      - working: true
-        agent: "testing"
-        comment: "Comprehensive testing passed - Contact form submission working correctly. Data properly stored in MongoDB contacts collection with UUID id, status=new, created_at timestamp. Returns correct {success:true, id} format."
+        comment: "Same pattern. MongoDB save first, sendContactNotification(doc).catch() fires after. Previously tested by testing agent for MongoDB save."
+
+  - task: "Email notification - sendQuoteNotification gracefully skips when SMTP not configured"
+    implemented: true
+    working: "NA"
+    file: "lib/email.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "SMTP vars are commented out in .env. Test should verify: (1) POST /api/quote still returns {success:true} when no SMTP configured, (2) lead IS saved in MongoDB, (3) no 500 error thrown. This proves the fire-and-forget contract works."
+
+  - task: "Email notification - sendContactNotification gracefully skips when SMTP not configured"
+    implemented: true
+    working: "NA"
+    file: "lib/email.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Same as above but for contact form. Test POST /api/contact returns success and saves to MongoDB even with no SMTP config."
 
   - task: "POST /api/admin/login - Password authentication"
     implemented: true
