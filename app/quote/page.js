@@ -138,6 +138,16 @@ export default function QuotePage() {
                 >
                   {loading ? <><Loader2 className="w-5 h-5 animate-spin" />Submitting...</> : <><Send className="w-5 h-5" />Request My Quote</>}
                 </button>
+
+                {/* Security Note */}
+                <div className="mt-4 flex items-start gap-2.5 p-4 bg-light-gray rounded-xl border border-gray-100">
+                  <span className="text-base leading-none mt-0.5 flex-shrink-0">🔒</span>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    <strong className="text-navy font-semibold">Your information is private and will never be shared.</strong>{' '}
+                    We&apos;ll respond within 1 business hour — or call us now at{' '}
+                    <a href="tel:4143249699" className="text-electric font-semibold hover:underline">414-324-9699</a>.
+                  </p>
+                </div>
               </form>
             )}
           </div>
