@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, CheckCircle2, ArrowRight, Award, Heart, Target, Users } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
+import { useCmsContent } from '@/hooks/useCmsContent'
 
 const PHONE = '414-324-9699'
 const TEL = 'tel:4143249699'
@@ -16,20 +17,44 @@ const breadcrumb = {
   ],
 }
 
-const values = [
-  { icon: Target, title: 'Mission-Driven', desc: 'Every shipment we handle represents a promise. Our mission is to be the most reliable expedite carrier in America, one delivery at a time.' },
-  { icon: Heart, title: 'Client-First Culture', desc: 'Our clients are not account numbers. We know your business, your timelines, and your challenges — and we build our service around you.' },
-  { icon: Award, title: 'Excellence in Everything', desc: 'From how we answer the phone to how we deliver your freight, we hold ourselves to the highest standards in the industry.' },
-  { icon: Users, title: 'A Team You Can Trust', desc: 'Our drivers are vetted, trained, and dedicated professionals. When ProExpress is on the job, you can rest easy.' },
-]
+const valueIcons = [Target, Heart, Award, Users]
 
-const team = [
-  { name: 'Robert Johnson', title: 'CEO & Founder', bio: '20+ years building ProExpress from a one-van operation into a nationwide expedite carrier. Robert\'s vision drives everything we do.', initials: 'RJ' },
-  { name: 'Lisa Martinez', title: 'VP of Operations', bio: 'With 15 years in fleet logistics, Lisa ensures every dispatch is optimized for speed, safety, and efficiency across our entire network.', initials: 'LM' },
-  { name: 'David Chen', title: 'Director, Customer Relations', bio: 'David leads our client success team, ensuring every customer from first call to final delivery experiences the ProExpress difference.', initials: 'DC' },
-]
+const defaultAbout = {
+  heroTitle: '20 Years of Delivering',
+  heroTitleHighlight: 'On Our Promise',
+  heroSubtitle: "Built on reliability, driven by speed, and powered by a team that treats every shipment like it's their own.",
+  storyTitle: 'Our Story',
+  storyParagraphs: [
+    "ProExpress was founded over 20 years ago with a single sprinter van and one unshakeable conviction: in expedite transportation, speed and reliability aren\u2019t luxuries \u2014 they\u2019re the product.",
+    "Over two decades, we\u2019ve built a large modern fleet of sprinter vans and straight trucks, a network of professional CDL drivers, and a 24/7 dispatch operation that never sleeps.",
+    "Today, ProExpress is a family of expedite transportation professionals united by one purpose: when your business can\u2019t afford a delay, we show up. Every time. On time.",
+  ],
+  stats: [
+    { stat: '20+', label: 'Years in Business' },
+    { stat: '100K+', label: 'Deliveries Completed' },
+    { stat: '24/7', label: 'Operations \u2014 Always On' },
+    { stat: '48', label: 'States Covered' },
+  ],
+  valuesTitle: 'Our Mission & Values',
+  valuesSubtitle: 'The principles that have guided every decision for 20 years \u2014 and will guide the next 20.',
+  values: [
+    { title: 'Mission-Driven', desc: 'Every shipment we handle represents a promise. Our mission is to be the most reliable expedite carrier in America, one delivery at a time.' },
+    { title: 'Client-First Culture', desc: 'Our clients are not account numbers. We know your business, your timelines, and your challenges \u2014 and we build our service around you.' },
+    { title: 'Excellence in Everything', desc: 'From how we answer the phone to how we deliver your freight, we hold ourselves to the highest standards in the industry.' },
+    { title: 'A Team You Can Trust', desc: 'Our drivers are vetted, trained, and dedicated professionals. When ProExpress is on the job, you can rest easy.' },
+  ],
+  teamTitle: 'Meet Our Leadership',
+  teamSubtitle: 'The experienced team behind 20 years of on-time performance.',
+  team: [
+    { name: 'Robert Johnson', title: 'CEO & Founder', bio: "20+ years building ProExpress from a one-van operation into a nationwide expedite carrier. Robert\u2019s vision drives everything we do.", initials: 'RJ' },
+    { name: 'Lisa Martinez', title: 'VP of Operations', bio: 'With 15 years in fleet logistics, Lisa ensures every dispatch is optimized for speed, safety, and efficiency across our entire network.', initials: 'LM' },
+    { name: 'David Chen', title: 'Director, Customer Relations', bio: 'David leads our client success team, ensuring every customer from first call to final delivery experiences the ProExpress difference.', initials: 'DC' },
+  ],
+}
 
 export default function AboutPage() {
+  const cms = useCmsContent('about_page', defaultAbout)
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
@@ -46,11 +71,11 @@ export default function AboutPage() {
               About ProExpress
             </div>
             <h1 className="font-heading font-900 text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
-              20 Years of Delivering
-              <span className="block text-electric">On Our Promise</span>
+              {cms.heroTitle}
+              <span className="block text-electric">{cms.heroTitleHighlight}</span>
             </h1>
             <p className="text-white/60 text-base sm:text-xl max-w-2xl">
-              Built on reliability, driven by speed, and powered by a team that treats every shipment like it\'s their own.
+              {cms.heroSubtitle}
             </p>
           </AnimatedSection>
         </div>
@@ -71,11 +96,9 @@ export default function AboutPage() {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-5">Our Story</h2>
+              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-5">{cms.storyTitle}</h2>
               <div className="space-y-4 text-gray-500 leading-relaxed">
-                <p>ProExpress was founded over 20 years ago with a single sprinter van and one unshakeable conviction: in expedite transportation, speed and reliability aren&apos;t luxuries — they&apos;re the product. What started as a Milwaukee expedite carrier has grown into one of the Midwest&apos;s most trusted providers of 24/7 expedited freight, same-day freight delivery, and nationwide expedite trucking across all 48 contiguous states.</p>
-                <p>Over two decades, we&apos;ve built a large modern fleet of sprinter vans and straight trucks, a network of professional CDL drivers, and a 24/7 dispatch operation that never sleeps. Our cargo van delivery and straight truck freight services have helped manufacturers prevent line shutdowns, hospitals receive critical medical supplies, and retailers keep their supply chains moving — more than 100,000 deliveries and counting.</p>
-                <p>Today, ProExpress is a family of expedite transportation professionals united by one purpose: when your business can&apos;t afford a delay, we show up. Every time. On time.</p>
+                {(cms.storyParagraphs || []).map((p, i) => <p key={i}>{p}</p>)}
               </div>
               <div className="flex flex-col sm:flex-row gap-3 mt-7">
                 <Link href="/quote" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-electric hover:bg-electric-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-electric/25 min-h-[48px] w-full sm:w-auto">
