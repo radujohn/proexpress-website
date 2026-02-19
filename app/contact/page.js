@@ -83,7 +83,7 @@ export default function ContactPage() {
                   </div>
                   <h2 className="font-heading font-800 text-2xl text-navy mb-2">Message Received!</h2>
                   <p className="text-gray-500 mb-5">We\'ll be in touch shortly. For urgent matters, call us now.</p>
-                  <a href={TEL} className="inline-flex items-center gap-2 px-6 py-3 bg-electric text-white font-bold rounded-xl min-h-[48px]">
+                  <a href={TEL} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-electric text-white font-bold rounded-xl min-h-[48px] w-full sm:w-auto">
                     <Phone className="w-4 h-4" />Call {PHONE}
                   </a>
                 </div>
