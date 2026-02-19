@@ -46,10 +46,10 @@ export default function AboutPage() {
               About ProExpress
             </div>
             <h1 className="font-heading font-900 text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
-              20 Years of Delivering<br />
-              <span className="text-electric">On Our Promise</span>
+              20 Years of Delivering
+              <span className="block text-electric">On Our Promise</span>
             </h1>
-            <p className="text-white/60 text-xl max-w-2xl">
+            <p className="text-white/60 text-base sm:text-xl max-w-2xl">
               Built on reliability, driven by speed, and powered by a team that treats every shipment like it\'s their own.
             </p>
           </AnimatedSection>
