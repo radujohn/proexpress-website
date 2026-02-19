@@ -8,9 +8,11 @@ if (!ADMIN_PASSWORD) {
 }
 
 function verifyAuth(request) {
+  const pwd = process.env.ADMIN_PASSWORD
+  if (!pwd) return false
   const auth = request.headers.get('authorization') || ''
   const token = auth.replace('Bearer ', '').trim()
-  return token === ADMIN_PASSWORD
+  return token === pwd
 }
 
 async function getDb() {
