@@ -114,17 +114,17 @@ export default function ServicesPage() {
               </div>
               <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-4">Straight Truck</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-lg">
-                For medium to large freight that needs to move fast and far, our Straight Truck service delivers. With team driver options for nonstop coast-to-coast delivery, we ensure your large, time-critical freight never stops moving — day or night.
+                ProExpress straight truck freight service handles medium to large time-critical loads that demand expedite speed at scale. As a Milwaukee expedite carrier with nationwide expedite trucking capability, we deploy straight trucks for regional corridor hauls and full coast-to-coast runs — with team drivers available for nonstop 24/7 expedited freight delivery when every hour counts.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Capacity up to 10,000 lbs and 1,600 cubic feet',
-                  'Team drivers available for nonstop 24-hour delivery',
-                  'Regional and nationwide coverage across all 48 states',
+                  'Straight truck freight up to 10,000 lbs and 1,600 cu ft',
+                  'Team drivers for nonstop 24/7 expedited freight runs',
+                  'Nationwide expedite trucking across all 48 states',
                   'Lift gate service available on equipped units',
-                  'Ideal for manufacturing, construction, and retail loads',
-                  'Dedicated vehicle — your freight is the only freight',
-                  'Electronic logging for transparent delivery tracking',
+                  'Dedicated straight truck — your freight only, no co-loading',
+                  'Manufacturing, construction, retail, and aerospace loads',
+                  'Electronic logging for transparent, real-time delivery status',
                 ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
