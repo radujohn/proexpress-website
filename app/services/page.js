@@ -43,10 +43,10 @@ export default function ServicesPage() {
               Our Services
             </div>
             <h1 className="font-heading font-900 text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
-              Freight Services Built for Speed
+              Expedite Freight Services Built for Speed
             </h1>
             <p className="text-white/60 text-base sm:text-xl max-w-2xl">
-              Two specialized vehicle options. One commitment: your freight arrives exactly when you need it.
+              Sprinter van shipping, cargo van delivery, and straight truck freight — two specialized services with one mission: your time-critical freight arrives on schedule, every time.
             </p>
           </AnimatedSection>
         </div>
