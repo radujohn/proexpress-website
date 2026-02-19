@@ -148,11 +148,11 @@ export default function Navbar() {
           {/* Drawer Footer CTAs */}
           <div className="p-5 border-t border-white/10 space-y-3">
             <a
-              href="tel:4143249699"
+              href={toTel(phone)}
               className="flex items-center justify-center gap-2 w-full py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors min-h-[48px]"
             >
               <Phone className="w-5 h-5 text-electric" />
-              Call 414-324-9699
+              Call {phone}
             </a>
             <Link
               href="/quote"
