@@ -56,6 +56,8 @@ const breadcrumb = {
 }
 
 export default function ServicesPage() {
+  const cms = useCmsContent('services_page', defaultServices)
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -73,10 +75,10 @@ export default function ServicesPage() {
               Our Services
             </div>
             <h1 className="font-heading font-900 text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
-              Expedite Freight Services Built for Speed
+              {cms.heroTitle}
             </h1>
             <p className="text-white/60 text-base sm:text-xl max-w-2xl">
-              Sprinter van shipping, cargo van delivery, and straight truck freight — two specialized services with one mission: your time-critical freight arrives on schedule, every time.
+              {cms.heroSubtitle}
             </p>
           </AnimatedSection>
         </div>
