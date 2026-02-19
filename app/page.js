@@ -40,9 +40,9 @@ const industries = [
 ]
 
 const testimonials = [
-  { name: 'Mike R.', company: 'Precision Auto Parts Co.', title: 'Plant Manager', quote: 'ProExpress delivered our critical automotive components from Detroit to Chicago in under 6 hours. Their sprinter van service is absolutely unmatched. They saved our production line and earned a customer for life.' },
-  { name: 'Sarah K.', company: 'Midwest Manufacturing Inc.', title: 'Operations Director', quote: 'When our assembly line was about to shut down due to a missing part, ProExpress came through with a same-day straight truck delivery. They saved us an estimated $40,000 in downtime. Incredible team.' },
-  { name: 'Dr. James L.', company: 'Regional Medical Center', title: 'Supply Chain Manager', quote: "We've relied on ProExpress for healthcare supply logistics for 3 years running. Their 24/7 availability, on-time guarantee, and professional drivers make them our sole expedite carrier. Simply the best." },
+  { name: 'Mike R.', company: 'Precision Auto Parts Co.', title: 'Plant Manager', quote: 'ProExpress handled our same-day freight delivery from Detroit to Chicago in under 6 hours. Their sprinter van shipping service is unmatched \u2014 direct, fast, and no terminal delays. Saved our production line.' },
+  { name: 'Sarah K.', company: 'Midwest Manufacturing Inc.', title: 'Operations Director', quote: 'When our line was about to go down, we needed expedite transportation immediately. ProExpress dispatched a straight truck freight team within 90 minutes and delivered nonstop through the night. Saved us $40K in downtime.' },
+  { name: 'Dr. James L.', company: 'Regional Medical Center', title: 'Supply Chain Manager', quote: 'We rely on ProExpress for 24/7 expedited freight of medical supplies. Three years of flawless cargo van delivery across the Midwest. Their Milwaukee expedite carrier team is the most dependable we\u2019ve worked with.' },
 ]
 
 const pillars = [
