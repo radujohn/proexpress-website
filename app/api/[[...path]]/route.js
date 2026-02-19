@@ -105,7 +105,15 @@ export async function POST(request, { params }) {
         status: 'new',
         created_at: new Date().toISOString(),
       }
+
+      // ── 1. Save to MongoDB first — this must never be skipped ──────────────
       await db.collection('quotes').insertOne(doc)
+
+      // ── 2. Fire-and-forget email — failure never affects the response ──────
+      sendQuoteNotification(doc).catch((err) =>
+        console.error('[ProExpress Email] Unhandled quote notification error:', err.message)
+      )
+
       return NextResponse.json({ success: true, id: doc.id })
     } catch (err) {
       return NextResponse.json({ error: err.message }, { status: 500 })
