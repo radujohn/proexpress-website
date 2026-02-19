@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
-import { Truck, LogOut, Search, Trash2, Phone, Mail, MapPin, Package, RefreshCw, Users, FileText, ChevronDown, Eye, EyeOff, Shield } from 'lucide-react'
+import { Truck, LogOut, Search, Trash2, Phone, Mail, MapPin, Package, RefreshCw, Users, FileText, ChevronDown, Eye, EyeOff, Shield, Layout } from 'lucide-react'
+import CmsTab from '@/components/CmsTab'
 
 const STORAGE_KEY = 'px_admin_token'
 
