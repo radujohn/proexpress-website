@@ -2,19 +2,30 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Phone, Menu, X, Truck } from 'lucide-react'
+import { useCmsContent } from '@/hooks/useCmsContent'
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
-  { label: 'Tracking', href: '/tracking' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
-]
+const defaultNavbar = {
+  logoText: 'Express',
+  phone: '414-324-9699',
+  links: [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Tracking', href: '/tracking' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
+  ],
+}
+
+const toTel = (phone) => 'tel:' + phone.replace(/\D/g, '')
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const cms = useCmsContent('navbar_content', defaultNavbar)
+  const navLinks = cms.links || defaultNavbar.links
+  const phone = cms.phone || defaultNavbar.phone
+  const logoText = cms.logoText || defaultNavbar.logoText
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
