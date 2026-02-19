@@ -111,11 +111,14 @@ backend:
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "MongoDB save happens first. Then sendQuoteNotification(doc).catch() fires asynchronously. If SMTP is not configured (SMTP vars missing), email is skipped with console.warn and API still returns {success:true, id}. Previously tested by testing agent for MongoDB save."
+      - working: true
+        agent: "testing"
+        comment: "Fire-and-forget contract fully tested with NO SMTP configured. POST /api/quote returned {success:true, id:4b7f488b...}. Quote successfully saved to MongoDB and retrievable via GET /api/admin/leads. No 500 errors thrown despite missing SMTP config. Email notification gracefully skipped as designed."
 
   - task: "POST /api/contact - Save to MongoDB + fire-and-forget email notification"
     implemented: true
