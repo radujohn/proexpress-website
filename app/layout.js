@@ -21,9 +21,24 @@ const inter = Inter({
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://proexpress.com'
 
 export const metadata = {
-  title: { default: 'ProExpress | Expedite Transportation Services', template: '%s | ProExpress' },
-  description: 'ProExpress delivers urgent freight anywhere in the 48 contiguous states. 24/7/365 same-day expedite service with Sprinter Vans and Straight Trucks. Call 414-324-9699.',
-  keywords: ['expedite transportation', 'same-day delivery', 'freight', 'sprinter van', 'straight truck', 'Milwaukee', 'nationwide logistics'],
+  title: {
+    default: 'ProExpress | 24/7 Expedite Transportation \u2014 Milwaukee & Nationwide',
+    template: '%s',
+  },
+  description:
+    'ProExpress delivers time-critical freight fast. Sprinter van and straight truck expedite services available 24/7/365. Serving local, regional, and national routes for 20+ years. Call 414-324-9699.',
+  keywords: [
+    'expedite transportation',
+    'same-day freight delivery',
+    'cargo van delivery',
+    'straight truck freight',
+    'sprinter van shipping',
+    '24/7 expedited freight',
+    'Milwaukee expedite carrier',
+    'nationwide expedite trucking',
+    'expedited freight',
+    'time-critical freight',
+  ],
   authors: [{ name: 'ProExpress' }],
   creator: 'ProExpress',
   metadataBase: new URL(baseUrl),
@@ -32,14 +47,16 @@ export const metadata = {
     locale: 'en_US',
     url: baseUrl,
     siteName: 'ProExpress',
-    title: 'ProExpress | Expedite Transportation — When Speed Is Non-Negotiable',
-    description: 'ProExpress delivers urgent freight anywhere in the 48 contiguous states. 24/7/365 same-day expedite service.',
-    images: [{ url: 'https://images.unsplash.com/photo-1636070762406-4262052fa6ef?w=1200', width: 1200, height: 630, alt: 'ProExpress Expedite Trucks' }],
+    title: 'ProExpress | 24/7 Expedite Transportation \u2014 Milwaukee & Nationwide',
+    description:
+      'ProExpress delivers time-critical freight fast. Sprinter van and straight truck expedite services available 24/7/365. Serving local, regional, and national routes for 20+ years.',
+    images: [{ url: 'https://images.unsplash.com/photo-1636070762406-4262052fa6ef?w=1200', width: 1200, height: 630, alt: 'ProExpress expedite transportation — sprinter van and straight truck fleet' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ProExpress | Expedite Transportation',
-    description: '24/7 nationwide expedite freight. Sprinter Vans & Straight Trucks. Call 414-324-9699.',
+    title: 'ProExpress | 24/7 Expedite Transportation \u2014 Milwaukee & Nationwide',
+    description:
+      'Same-day sprinter van and straight truck expedite freight. Milwaukee expedite carrier serving all 48 states. Call 414-324-9699.',
     images: ['https://images.unsplash.com/photo-1636070762406-4262052fa6ef?w=1200'],
   },
   robots: { index: true, follow: true },
