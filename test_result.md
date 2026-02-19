@@ -156,11 +156,14 @@ backend:
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Tested - returns paginated leads with total count. Unauthorized returns 401."
+      - working: true
+        agent: "testing"
+        comment: "Admin leads fetch fully tested - Returns paginated data with {data, total, page, limit} format. Proper Bearer token authentication. Unauthorized access correctly returns 401. Found 3 leads during testing."
 
   - task: "GET /api/admin/contacts - Fetch all contacts (auth required)"
     implemented: true
