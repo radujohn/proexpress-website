@@ -164,8 +164,8 @@ export default function HomePage() {
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { icon: Package, title: 'Sprinter Van / Cargo Van', desc: 'Ideal for smaller urgent loads up to 2,500 lbs. Perfect for same-day local and regional deliveries with door-to-door service and immediate dispatch availability.', href: '/services', features: ['Up to 2,500 lbs capacity', 'Same-day dispatch available', 'Door-to-door service', 'Local & regional coverage'] },
-              { icon: Truck, title: 'Straight Truck', desc: 'Built for medium to large freight loads up to 10,000 lbs. Regional and national runs with team drivers available for nonstop delivery coast-to-coast.', href: '/services', features: ['Up to 10,000 lbs capacity', 'Team drivers for nonstop runs', 'Regional & national coverage', 'Expedited LTL options'] },
+              { icon: Package, title: 'Sprinter Van / Cargo Van', desc: 'Industry-leading sprinter van shipping and cargo van delivery for urgent loads up to 2,500 lbs. ProExpress offers same-day freight delivery with direct door-to-door expedite service — no terminals, no transfers.', href: '/services', features: ['Up to 2,500 lbs capacity', 'Same-day freight delivery available', 'Direct door-to-door, no terminals', 'Local & regional expedite routes'] },
+              { icon: Truck, title: 'Straight Truck', desc: 'Straight truck freight service for medium to large time-critical loads up to 10,000 lbs. Nationwide expedite trucking with team drivers for nonstop 24/7 expedited freight delivery coast to coast.', href: '/services', features: ['Up to 10,000 lbs capacity', 'Team drivers for nonstop delivery', 'Regional & national expedite routes', 'Available 24/7 with immediate dispatch'] },
             ].map((svc, i) => (
               <AnimatedSection key={i} delay={i * 0.15}>
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-electric/20 transition-all duration-300 group h-full">
