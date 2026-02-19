@@ -152,15 +152,18 @@ backend:
 
   - task: "Email notification - sendContactNotification gracefully skips when SMTP not configured"
     implemented: true
-    working: "NA"
+    working: true
     file: "lib/email.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Same as above but for contact form. Test POST /api/contact returns success and saves to MongoDB even with no SMTP config."
+      - working: true
+        agent: "testing"
+        comment: "Email notification graceful skip fully tested. Console logs show '[ProExpress Email] NOTIFY_EMAIL is not set — skipping contact notification.' POST /api/contact returns success, contact saves to MongoDB, no errors thrown. Fire-and-forget contract working perfectly."
 
   - task: "POST /api/admin/login - Password authentication"
     implemented: true
