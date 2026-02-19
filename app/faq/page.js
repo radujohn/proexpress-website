@@ -67,8 +67,8 @@ export default function FAQPage() {
           <div className="w-14 h-14 bg-electric/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
             <HelpCircle className="w-7 h-7 text-electric" />
           </div>
-          <h1 className="font-heading font-900 text-4xl sm:text-5xl text-white mb-4">Frequently Asked Questions</h1>
-          <p className="text-white/60 text-xl max-w-2xl mx-auto">Everything you need to know about ProExpress expedite transportation services.</p>
+          <h1 className="font-heading font-900 text-3xl sm:text-4xl md:text-5xl text-white mb-4">Frequently Asked Questions</h1>
+          <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto">Everything you need to know about ProExpress expedite transportation services.</p>
         </div>
       </section>
 
