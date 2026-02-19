@@ -154,43 +154,43 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-xs text-gray-400 mb-0.5 uppercase font-semibold tracking-wide">Phone</div>
-                    <a href={TEL} className="text-navy font-semibold hover:text-electric transition-colors">{PHONE}</a>
+                    <a href={tel} className="text-navy font-semibold hover:text-electric transition-colors">{phone}</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-xs text-gray-400 mb-0.5 uppercase font-semibold tracking-wide">Email</div>
-                    <span className="text-navy font-semibold">info@proexpress.com</span>
+                    <span className="text-navy font-semibold">{email}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-xs text-gray-400 mb-0.5 uppercase font-semibold tracking-wide">Address</div>
-                    <span className="text-navy font-semibold text-sm">1234 Industrial Dr<br />Milwaukee, WI 53201</span>
+                    <span className="text-navy font-semibold text-sm whitespace-pre-line">{address}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-xs text-gray-400 mb-0.5 uppercase font-semibold tracking-wide">Hours</div>
-                    <span className="text-navy font-semibold text-sm">24 Hours / 7 Days<br />365 Days a Year</span>
+                    <span className="text-navy font-semibold text-sm whitespace-pre-line">{hours}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-100" style={{ height: 200 }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93157.70744826024!2d-88.07664978779296!3d43.0388806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880502d7279cdc1b%3A0x7911d251b22a02b2!2sMilwaukee%2C%20WI!5e0!3m2!1sen!2sus!4v1718000000000!5m2!1sen!2sus"
+                  src={mapUrl}
                   width="100%"
                   height="200"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="ProExpress Milwaukee Location"
+                  title="ProExpress Location"
                 />
               </div>
             </div>
