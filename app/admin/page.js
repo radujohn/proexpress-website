@@ -174,7 +174,7 @@ export default function AdminPage() {
               {loginLoading ? 'Authenticating...' : 'Sign In'}
             </button>
           </form>
-          <p className="text-center text-white/30 text-xs mt-4">Default password: proexpress2025</p>
+          <p className="text-center text-white/30 text-xs mt-4">Set via <code className="font-mono bg-white/10 px-1 rounded">ADMIN_PASSWORD</code> environment variable</p>
         </div>
       </div>
     )
