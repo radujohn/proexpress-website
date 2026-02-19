@@ -404,13 +404,15 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "POST /api/quote - Save to MongoDB + fire-and-forget email notification"
+    - "POST /api/contact - Save to MongoDB + fire-and-forget email notification"
+    - "Email notification - sendQuoteNotification gracefully skips when SMTP not configured"
+    - "Email notification - sendContactNotification gracefully skips when SMTP not configured"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 agent_communication:
   - agent: "main"
-    message: "Built complete ProExpress website with 7 pages + admin dashboard. All backend API routes implemented with MongoDB. Manually verified: POST /api/quote works, POST /api/contact works, admin login works, leads fetch works, status update works. Admin password is 'proexpress2025'. All pages return 200. Please test all backend API endpoints thoroughly including edge cases and auth validation."
-  - agent: "testing"
-    message: "Completed comprehensive backend API testing. All 10 backend tests PASSED. Tested quote/contact submission, admin authentication, CRUD operations, status updates, and proper auth validation. All endpoints working correctly with MongoDB integration. Ready for final summary."
+    message: "Added Nodemailer email notifications (lib/email.js). Key things to verify: (1) POST /api/quote still returns {success:true, id} even though SMTP env vars are NOT set — MongoDB save must succeed. (2) POST /api/contact same. (3) Confirm leads are retrievable via GET /api/admin/leads. Admin password is still 'proexpress2025'. SMTP vars are intentionally NOT set in .env so the graceful-skip path is what gets exercised. Do NOT try to test actual email delivery — just verify forms save and return success."
