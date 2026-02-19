@@ -286,6 +286,8 @@ export default function AdminPage() {
             <div className="flex items-center justify-center py-16 text-gray-400">
               <RefreshCw className="w-5 h-5 animate-spin mr-2" />Loading data...
             </div>
+          ) : activeTab === 'content' ? (
+            <CmsTab token={token} />
           ) : activeTab === 'leads' ? (
             /* LEADS TABLE */
             filteredLeads.length === 0 ? (
