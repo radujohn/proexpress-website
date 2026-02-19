@@ -137,15 +137,18 @@ backend:
 
   - task: "Email notification - sendQuoteNotification gracefully skips when SMTP not configured"
     implemented: true
-    working: "NA"
+    working: true
     file: "lib/email.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "SMTP vars are commented out in .env. Test should verify: (1) POST /api/quote still returns {success:true} when no SMTP configured, (2) lead IS saved in MongoDB, (3) no 500 error thrown. This proves the fire-and-forget contract works."
+      - working: true
+        agent: "testing"
+        comment: "Email notification graceful skip fully tested. Console logs show '[ProExpress Email] NOTIFY_EMAIL is not set — skipping quote notification.' POST /api/quote returns success, lead saves to MongoDB, no errors thrown. Fire-and-forget contract working perfectly."
 
   - task: "Email notification - sendContactNotification gracefully skips when SMTP not configured"
     implemented: true
