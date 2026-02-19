@@ -137,18 +137,18 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection delay={0.1}>
-              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-5">Our Modern Fleet</h2>
+              <h2 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-5">Our Modern Expedite Fleet</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-lg">
-                ProExpress operates one of the region\'s largest and most well-maintained expedite fleets. Every vehicle is inspected regularly, GPS-tracked, and operated by a vetted professional driver.
+                ProExpress operates one of the region&apos;s largest and most well-maintained expedite fleets, supporting both sprinter van shipping and straight truck freight for same-day freight delivery and long-haul nationwide expedite trucking.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Late-model Sprinter vans and cargo vans — fuel-efficient and fast',
-                  'Heavy-duty straight trucks for larger freight needs',
-                  'GPS tracking on every vehicle in real time',
-                  'Regular DOT-compliant inspections and maintenance',
-                  'All vehicles fully insured, all drivers fully licensed',
-                  'Liftgate-equipped units available on request',
+                  'Late-model sprinter vans for same-day freight delivery and cargo van delivery',
+                  'Heavy-duty straight trucks for large expedite transportation needs',
+                  'GPS tracking on every vehicle — real-time 24/7 expedited freight visibility',
+                  'Regular DOT-compliant maintenance and safety inspections',
+                  'All vehicles fully insured, all drivers fully licensed CDL professionals',
+                  'Lift gate-equipped straight trucks available on request',
                 ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
                     <CheckCircle2 className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />{f}
