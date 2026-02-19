@@ -10,33 +10,69 @@ const faqs = [
   {
     category: 'Coverage & Service Area',
     questions: [
-      { q: 'What areas do you serve?', a: 'ProExpress serves all 48 contiguous United States. From our Milwaukee, WI headquarters, we dispatch drivers for local runs throughout Wisconsin and Illinois, regional hauls across the Midwest, and nationwide coast-to-coast deliveries. No matter where your freight needs to go within the continental US, we can get it there.' },
-      { q: 'Do you offer same-day delivery?', a: 'Yes — same-day delivery is our specialty. ProExpress can dispatch a vehicle within 30–90 minutes of your request, making same-day delivery possible for the vast majority of routes. For longer interstate routes, we utilize team drivers who alternate driving shifts to ensure nonstop, around-the-clock transit.' },
-      { q: 'Are you available on weekends and holidays?', a: 'Absolutely. ProExpress operates 24 hours a day, 7 days a week, 365 days a year — including every weekend, holiday, and overnight. Our dispatch team is always staffed with live people who are ready to take your call and get a driver moving immediately.' },
+      {
+        q: 'What areas do you serve?',
+        a: 'ProExpress provides nationwide expedite trucking across all 48 contiguous United States. Headquartered in Milwaukee, WI, we offer same-day freight delivery throughout Wisconsin and Illinois, regional expedite transportation across the Midwest, and direct coast-to-coast straight truck freight hauls. No corridor is out of reach for our 24/7 expedited freight operation.',
+      },
+      {
+        q: 'Do you offer same-day delivery?',
+        a: 'Yes — same-day freight delivery is our core specialty. ProExpress can dispatch a sprinter van or straight truck within 1–2 hours of your request, making same-day expedite transportation achievable on the vast majority of routes. For longer hauls, we utilize team drivers who alternate shifts for nonstop 24/7 expedited freight delivery.',
+      },
+      {
+        q: 'Are you available on weekends and holidays?',
+        a: 'Absolutely. ProExpress operates 24 hours a day, 7 days a week, 365 days a year — including every weekend and holiday. Our live dispatch team is always staffed and ready to move your time-critical freight immediately, regardless of the hour or date.',
+      },
     ],
   },
   {
     category: 'Services & Fleet',
     questions: [
-      { q: 'What is the difference between a Sprinter Van and a Straight Truck?', a: 'A Sprinter Van or Cargo Van is ideal for smaller, time-critical loads up to approximately 2,500 lbs and 200 cubic feet. It is more fuel-efficient, maneuverable in urban environments, and typically faster for regional routes. A Straight Truck handles much larger freight — up to 10,000 lbs and 1,600 cubic feet — making it the right choice for medium to large shipments that need expedite speed at a larger scale.' },
-      { q: 'What is the maximum freight weight you can handle?', a: 'Our Sprinter Vans handle loads up to approximately 2,500 lbs, while our Straight Trucks can accommodate freight up to 10,000 lbs. For loads exceeding these limits, please contact us directly at 414-324-9699 and we will work with our partner network to find the right solution for your specific freight needs.' },
-      { q: 'Do you offer team drivers for nonstop delivery?', a: 'Yes. For time-critical long-haul routes where every hour counts, we offer team driver service on our Straight Trucks. With two drivers, the vehicle never stops — one drives while the other rests — enabling continuous 24-hour transit. This is especially valuable for coast-to-coast or multi-state overnight deliveries.' },
+      {
+        q: 'What is the difference between a Sprinter Van and a Straight Truck?',
+        a: 'Sprinter van shipping and cargo van delivery are best suited for urgent loads up to 2,500 lbs. These vehicles are faster, more maneuverable in urban environments, and ideal for same-day freight delivery on local and regional routes. Straight truck freight handles larger loads — up to 10,000 lbs — making it the right choice for medium to large expedite transportation needs across regional and national corridors.',
+      },
+      {
+        q: 'What is the maximum freight weight you can handle?',
+        a: 'For sprinter van shipping and cargo van delivery, ProExpress handles loads up to 2,500 lbs. Our straight truck freight service accommodates loads up to 10,000 lbs. For shipments exceeding these limits, call us at 414-324-9699 and we will work with our partner network to find the right expedite transportation solution.',
+      },
+      {
+        q: 'Do you offer team drivers for nonstop delivery?',
+        a: 'Yes. For time-critical long-haul routes where every hour matters, ProExpress offers team driver service on our straight truck freight fleet. With two CDL drivers, the vehicle never stops — enabling continuous 24/7 expedited freight movement for coast-to-coast and multi-state overnight deliveries.',
+      },
     ],
   },
   {
     category: 'Quotes, Booking & Tracking',
     questions: [
-      { q: 'How do I request a quote?', a: 'You have two easy options. First, you can call us directly at 414-324-9699 for an instant quote over the phone — our dispatch team can provide pricing in under 2 minutes. Second, you can submit our online Quote Request form at any time and a logistics specialist will respond within minutes with a competitive, transparent price.' },
-      { q: 'How do I track my shipment?', a: 'Our full online tracking portal is currently in development. In the meantime, you can get real-time shipment status by calling our dispatch team directly at 414-324-9699. Our dispatchers have live GPS visibility on every vehicle in our fleet and can give you an accurate ETA at any time.' },
-      { q: 'How quickly can you dispatch a vehicle?', a: 'ProExpress prides itself on industry-leading response times. In most cases, we can have a driver on-site at your pickup location within 30 to 90 minutes of your call. Our regionally distributed fleet and 24/7 dispatch operation make this possible regardless of time of day or day of week.' },
+      {
+        q: 'How do I request a quote?',
+        a: 'You can request a free expedite freight quote two ways: call ProExpress directly at 414-324-9699 for an immediate over-the-phone quote in under 2 minutes, or submit our online Quote Request form and a logistics specialist will respond within minutes. We provide transparent, competitive pricing for all sprinter van shipping, cargo van delivery, and straight truck freight services.',
+      },
+      {
+        q: 'How do I track my shipment?',
+        a: 'Our full online tracking portal is currently in development. For real-time expedite transportation status, call our 24/7 dispatch team at 414-324-9699. Our dispatchers have live GPS visibility on every vehicle in the fleet and can provide an accurate ETA and delivery update at any time.',
+      },
+      {
+        q: 'How quickly can you dispatch a vehicle?',
+        a: 'ProExpress can dispatch a vehicle within 1–2 hours of your request in most service areas. Our regionally staged fleet of sprinter vans and straight trucks, combined with our 24/7 expedited freight dispatch operation, ensures industry-leading response times for any same-day freight delivery need.',
+      },
     ],
   },
   {
     category: 'Industries & Compliance',
     questions: [
-      { q: 'What industries do you serve?', a: 'ProExpress serves businesses across virtually every major industry, including Automotive (production parts, assemblies), Manufacturing (components, tooling), Healthcare (medical devices, pharmaceuticals, supplies), Retail (inventory replenishment, urgent stock), Construction (materials, equipment), Aerospace (precision parts), Energy (industrial components), and Technology (electronics, equipment). If your business has time-critical freight, we can help.' },
-      { q: 'Are your drivers licensed and insured?', a: 'Yes — absolutely. All ProExpress drivers hold valid commercial driver\'s licenses (CDL) appropriate for the vehicles they operate. Our entire fleet carries comprehensive cargo and liability insurance. Every driver undergoes background checks, drug screening, and ongoing safety training. We maintain full DOT compliance across all operations.' },
-      { q: 'What makes ProExpress different from other carriers?', a: 'Three things set us apart: speed, reliability, and accountability. Unlike brokers who outsource to unknown carriers, ProExpress uses our own drivers and our own fleet — giving you consistent quality and direct accountability. We\'ve been doing this for 20+ years and have built our reputation on a 99.8% on-time delivery rate. When you call ProExpress, a real dispatcher answers, a real driver is dispatched, and your freight gets there on time — guaranteed.' },
+      {
+        q: 'What industries do you serve?',
+        a: 'ProExpress serves virtually every major industry requiring expedite transportation: Automotive (production parts, assemblies), Manufacturing (components, tooling), Healthcare (medical devices, pharmaceuticals), Retail (inventory replenishment), Construction (materials, equipment), Aerospace (precision parts), Energy (industrial components), and Technology (electronics, hardware). If your business has time-critical freight, our Milwaukee expedite carrier team can handle it.',
+      },
+      {
+        q: 'Are your drivers licensed and insured?',
+        a: 'Yes. All ProExpress drivers hold valid commercial driver\'s licenses (CDL) appropriate for their vehicle class. Our entire fleet carries comprehensive cargo and liability insurance. Every driver undergoes background checks, drug screening, and ongoing safety training. We maintain full DOT compliance across all sprinter van shipping and straight truck freight operations.',
+      },
+      {
+        q: 'What makes ProExpress different from other carriers?',
+        a: 'Three things set ProExpress apart as a Milwaukee expedite carrier: speed, reliability, and accountability. Unlike brokers, we use our own drivers and our own fleet for every cargo van delivery, sprinter van shipping, and straight truck freight run — giving you consistent quality and direct accountability. Our 99.8% on-time rate across 100,000+ same-day freight delivery runs speaks for itself. When you call ProExpress, a real dispatcher answers, a real driver is dispatched, and your freight arrives on time — guaranteed.',
+      },
     ],
   },
 ]
