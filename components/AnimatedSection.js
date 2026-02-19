@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function AnimatedSection({ children, className = '', delay = 0, direction = 'up' }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const isInView = useInView(ref, { once: true, margin: '-40px' })
 
   const variants = {
     hidden: {
