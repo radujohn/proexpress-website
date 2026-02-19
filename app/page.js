@@ -306,6 +306,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUST SIGNALS — Licensed, Bonded & Insured */}
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <AnimatedSection className="text-center mb-6">
+            <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Trusted & Credentialed</span>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              { icon: '🛡️', label: 'Fully Licensed', desc: 'Federally licensed carrier operating under FMCSA authority.' },
+              { icon: '✅', label: 'Fully Insured', desc: 'Comprehensive cargo & liability insurance on every shipment.' },
+              { icon: '⭐', label: '20+ Years Experience', desc: 'Two decades delivering time-critical freight across all 48 states.' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="flex flex-col items-center text-center p-5 rounded-2xl bg-light-gray border border-gray-100 hover:border-electric/20 transition-colors">
+                  <span className="text-3xl mb-3">{item.icon}</span>
+                  <h3 className="font-heading font-800 text-navy text-base mb-1">{item.label}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* BOTTOM CTA */}
       <section className="py-16 bg-navy relative overflow-hidden">
         <div className="absolute inset-0">
