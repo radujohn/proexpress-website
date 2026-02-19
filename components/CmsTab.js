@@ -767,7 +767,8 @@ export default function CmsTab({ token }) {
     const d = getCurrentData()
     switch (activeSection) {
       case 'site_settings':    return <SiteSettingsEditor    data={d} onChange={handleChange} />
-      case 'nav_links':        return <NavLinksEditor        data={d} onChange={handleChange} />
+      case 'navbar_content':   return <NavbarContentEditor   data={d} onChange={handleChange} />
+      case 'footer_content':   return <FooterContentEditor   data={d} onChange={handleChange} />
       case 'home_hero':        return <HomeHeroEditor        data={d} onChange={handleChange} />
       case 'home_cta':         return <HomeCTAEditor         data={d} onChange={handleChange} />
       case 'home_testimonials':return <TestimonialsEditor    data={d} onChange={handleChange} />
@@ -775,6 +776,8 @@ export default function CmsTab({ token }) {
       case 'services_page':    return <ServicesEditor        data={d} onChange={handleChange} />
       case 'about_page':       return <AboutEditor           data={d} onChange={handleChange} />
       case 'faq_page':         return <FAQPageEditor         data={d} onChange={handleChange} />
+      case 'contact_page':     return <ContactPageEditor     data={d} onChange={handleChange} />
+      case 'quote_page':       return <QuotePageEditor       data={d} onChange={handleChange} />
       default: return <p className="text-gray-400 text-sm">Select a section from the left to start editing.</p>
     }
   }
