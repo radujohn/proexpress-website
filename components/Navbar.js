@@ -75,11 +75,11 @@ export default function Navbar() {
             {/* Desktop Right */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="tel:4143249699"
+                href={toTel(phone)}
                 className="flex items-center gap-2 text-sm font-semibold text-electric hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                414-324-9699
+                {phone}
               </a>
               <Link
                 href="/quote"
