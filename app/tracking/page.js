@@ -24,8 +24,8 @@ export default function TrackingPage() {
             <div className="w-16 h-16 bg-electric/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
               <Package className="w-8 h-8 text-electric" />
             </div>
-            <h1 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-3">Track Your Shipment</h1>
-            <p className="text-gray-500 text-lg">Enter your tracking number below to get the latest status on your freight.</p>
+            <h1 className="font-heading font-900 text-3xl sm:text-4xl text-navy mb-3">Track Your Expedite Shipment</h1>
+            <p className="text-gray-500 text-lg">Enter your ProExpress tracking number below for shipment status, or call us 24/7 for an immediate update from dispatch.</p>
           </div>
 
           {/* Tracking Form */}
