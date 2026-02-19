@@ -556,6 +556,140 @@ function FAQPageEditor({ data, onChange }) {
   )
 }
 
+// ─── NEW: Navbar / Footer / Contact / Quote editors ──────────────────────────
+
+function LinkListEditor({ label, items, onChange }) {
+  const update = (i, k, v) => { const n = items.map((x, idx) => idx === i ? { ...x, [k]: v } : x); onChange(n) }
+  const add = () => onChange([...items, { label: '', href: '/' }])
+  const remove = (i) => onChange(items.filter((_, idx) => idx !== i))
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-2">
+        <label className={labelCls}>{label}</label>
+        <button onClick={add} className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-700 font-semibold whitespace-nowrap">
+          <Plus className="w-3 h-3" /> Add Link
+        </button>
+      </div>
+      <div className="space-y-2">
+        {items.map((link, i) => (
+          <div key={i} className="flex gap-2 items-center">
+            <input value={link.label} onChange={e => update(i, 'label', e.target.value)} placeholder="Label" className={inputCls + ' w-36 flex-shrink-0'} />
+            <input value={link.href} onChange={e => update(i, 'href', e.target.value)} placeholder="/path" className={inputCls + ' flex-1'} />
+            <button onClick={() => remove(i)} className="text-gray-300 hover:text-red-500 flex-shrink-0"><Trash2 className="w-4 h-4" /></button>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function NavbarContentEditor({ data, onChange }) {
+  const set = (k) => (v) => onChange({ ...data, [k]: v })
+  return (
+    <div className="space-y-5">
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Logo & Phone</h4>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label className={labelCls}>Logo Text (after &ldquo;Pro&rdquo;)</label>
+            <input value={data.logoText} onChange={e => set('logoText')(e.target.value)} placeholder="Express" className={inputCls} />
+            <p className="text-xs text-gray-400 mt-1">The logo always shows &ldquo;Pro&rdquo; + this text in blue.</p>
+          </div>
+          <Field label="Phone Number (displayed in header)" value={data.phone} onChange={set('phone')} placeholder="414-324-9699" />
+        </div>
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Navigation Links</h4>
+        <LinkListEditor label="Header & Mobile Menu Links" items={data.links || []} onChange={set('links')} />
+      </div>
+    </div>
+  )
+}
+
+function FooterContentEditor({ data, onChange }) {
+  const set = (k) => (v) => onChange({ ...data, [k]: v })
+  return (
+    <div className="space-y-6">
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Brand Column</h4>
+        <Field label="Tagline / Description" value={data.tagline} onChange={set('tagline')} rows={2} />
+        <Field label="Phone Number (footer)" value={data.phone} onChange={set('phone')} placeholder="414-324-9699" />
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Contact Info Column</h4>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Field label="Email" value={data.email} onChange={set('email')} />
+          <Field label="Hours" value={data.hours} onChange={set('hours')} placeholder="24 / 7 / 365 — Always Open" />
+        </div>
+        <Field label="Address (displayed in footer)" value={data.address} onChange={set('address')} />
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Social Media Links</h4>
+        <div className="grid sm:grid-cols-3 gap-3">
+          <Field label="LinkedIn URL" value={data.linkedin} onChange={set('linkedin')} placeholder="https://linkedin.com/..." />
+          <Field label="Facebook URL" value={data.facebook} onChange={set('facebook')} placeholder="https://facebook.com/..." />
+          <Field label="Instagram URL" value={data.instagram} onChange={set('instagram')} placeholder="https://instagram.com/..." />
+        </div>
+      </div>
+      <LinkListEditor label="Quick Links Column" items={data.quickLinks || []} onChange={set('quickLinks')} />
+      <LinkListEditor label="Services Links Column" items={data.serviceLinks || []} onChange={set('serviceLinks')} />
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Bottom Bar</h4>
+        <Field label="Copyright Text" value={data.copyright} onChange={set('copyright')} placeholder="© 2025 ProExpress. All Rights Reserved." />
+      </div>
+    </div>
+  )
+}
+
+function ContactPageEditor({ data, onChange }) {
+  const set = (k) => (v) => onChange({ ...data, [k]: v })
+  return (
+    <div className="space-y-5">
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Page Header</h4>
+        <Field label="Page Title" value={data.heroTitle} onChange={set('heroTitle')} />
+        <Field label="Page Subtitle" value={data.heroSubtitle} onChange={set('heroSubtitle')} rows={2} />
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Contact Details (Info Panel)</h4>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Field label="Phone Number" value={data.phone} onChange={set('phone')} placeholder="414-324-9699" />
+          <Field label="Email Address" value={data.email} onChange={set('email')} placeholder="info@proexpress.com" />
+        </div>
+        <Field label="Address (use \\n for line break)" value={data.address} onChange={set('address')} rows={2} placeholder={'1234 Industrial Dr\nMilwaukee, WI 53201'} />
+        <Field label="Hours (use \\n for line break)" value={data.hours} onChange={set('hours')} rows={2} placeholder={'24 Hours / 7 Days\n365 Days a Year'} />
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Map Embed</h4>
+        <Field label="Google Maps Embed URL" value={data.mapUrl} onChange={set('mapUrl')} rows={3} placeholder="https://www.google.com/maps/embed?pb=..." />
+        <p className="text-xs text-gray-400">Get this from Google Maps → Share → Embed a map → copy the src URL only.</p>
+      </div>
+    </div>
+  )
+}
+
+function QuotePageEditor({ data, onChange }) {
+  const set = (k) => (v) => onChange({ ...data, [k]: v })
+  return (
+    <div className="space-y-5">
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Page Header</h4>
+        <Field label="Page Title / Headline" value={data.heroTitle} onChange={set('heroTitle')} />
+        <Field label="Page Subtitle" value={data.heroSubtitle} onChange={set('heroSubtitle')} rows={2} />
+      </div>
+      <div className="space-y-3">
+        <h4 className="text-sm font-bold text-gray-700 border-b pb-2">Sidebar Call-to-Action</h4>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Field label="Sidebar Title" value={data.sidebarTitle} onChange={set('sidebarTitle')} placeholder="Need It Faster?" />
+          <Field label="Sidebar Phone Number" value={data.sidebarPhone} onChange={set('sidebarPhone')} placeholder="414-324-9699" />
+        </div>
+        <Field label="Sidebar Description" value={data.sidebarSubtitle} onChange={set('sidebarSubtitle')} rows={2} />
+        <Field label="Sidebar Note (small text below button)" value={data.sidebarNote} onChange={set('sidebarNote')} placeholder="Available 24/7/365 — including holidays" />
+      </div>
+    </div>
+  )
+}
+
 // ─── Section config ────────────────────────────────────────────────────────────
 
 const SECTIONS = [
