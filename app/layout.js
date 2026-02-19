@@ -3,6 +3,8 @@ import { Barlow, Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingCallButton from '@/components/FloatingCallButton'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
 
 const barlow = Barlow({
   subsets: ['latin'],
