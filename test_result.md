@@ -364,9 +364,24 @@ frontend:
         agent: "testing"
         comment: "COMPREHENSIVE MOBILE UI AUDIT COMPLETED ✅ Tested all 7 pages (Home, Services, About, Tracking, Quote, Contact, FAQ) at 3 breakpoints (375px, 768px, 1440px). Results: Hamburger menu works perfectly (visible on mobile ≤375px, hidden on tablet/desktop ≥768px), Floating call button visible and properly positioned on all pages/breakpoints, NO horizontal scroll detected on any configuration, Hero sections display correctly with readable text, Forms have proper full-width inputs and 48px+ touch targets, Footer responsive stacking works, FAQ accordion functionality confirmed (clickable questions, proper toggle). All 21 configurations tested successfully with ZERO critical issues found."
 
+  - task: "Navbar - Sticky with hamburger mobile menu, phone click-to-call"
+    implemented: true
+    working: true
+    file: "components/Navbar.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Sticky nav, scroll effect, mobile hamburger drawer with CTAs. Phone is click-to-call tel:4143249699."
+      - working: true
+        agent: "testing" 
+        comment: "Navbar fully tested across all breakpoints ✅ Hamburger menu appears correctly on mobile (375px), hidden on tablet/desktop (768px+). Drawer opens smoothly with phone number, navigation links, and Get a Quote button visible. Sticky positioning works. Phone number is click-to-call (tel:4143249699). No z-index issues detected."
+
   - task: "Floating call button - Fixed bottom-right on all pages"
     implemented: true
-    working: "NA"
+    working: true
     file: "components/FloatingCallButton.js"
     stuck_count: 0
     priority: "high"
@@ -375,10 +390,13 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "Fixed bottom-right, electric blue, phone icon, tel:4143249699 link."
+      - working: true
+        agent: "testing"
+        comment: "Floating call button fully tested ✅ Visible on all 7 pages across all breakpoints. Correctly positioned fixed bottom-right (24px from edges), proper z-index (40), adequate touch target size (64x60px on mobile/tablet, larger on desktop). Tel link working (tel:4143249699). Button maintains visibility and accessibility across all viewport sizes."
 
   - task: "Footer - Dark navy, 4 columns, click-to-call"
     implemented: true
-    working: "NA"
+    working: true
     file: "components/Footer.js"
     stuck_count: 0
     priority: "medium"
@@ -387,6 +405,9 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "4-column footer, all links, social icons, phone as click-to-call."
+      - working: true
+        agent: "testing"
+        comment: "Footer responsive layout tested ✅ Properly stacks columns on mobile (full-width at 375px), maintains readable layout across all breakpoints. No horizontal overflow detected. Phone numbers are click-to-call links. All navigation links functional."
 
   - task: "JSON-LD SEO schemas - Organization, LocalBusiness, Service, FAQPage, BreadcrumbList"
     implemented: true
