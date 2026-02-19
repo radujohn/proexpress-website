@@ -201,11 +201,14 @@ backend:
     file: "app/api/[[...path]]/route.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Implemented - DELETE endpoint removes record from MongoDB by UUID."
+      - working: true
+        agent: "testing"
+        comment: "Delete endpoints fully tested - Both DELETE /api/admin/leads/:id and /api/admin/contacts/:id working correctly. Records successfully removed from MongoDB by UUID. Authentication required and working. Returns {success:true}."
 
   - task: "GET /api/health - Health check endpoint"
     implemented: true
