@@ -45,7 +45,7 @@ export default function ServicesPage() {
             <h1 className="font-heading font-900 text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
               Freight Services Built for Speed
             </h1>
-            <p className="text-white/60 text-xl max-w-2xl">
+            <p className="text-white/60 text-base sm:text-xl max-w-2xl">
               Two specialized vehicle options. One commitment: your freight arrives exactly when you need it.
             </p>
           </AnimatedSection>
