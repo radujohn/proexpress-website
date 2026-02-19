@@ -69,8 +69,8 @@ export default function ContactPage() {
       <div className="min-h-screen bg-light-gray pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h1 className="font-heading font-900 text-3xl sm:text-4xl lg:text-5xl text-navy mb-3">Get in Touch</h1>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">We\'re available 24/7/365. Whether you need a quote, have a question, or need a driver dispatched right now — we\'re here.</p>
+            <h1 className="font-heading font-900 text-3xl sm:text-4xl lg:text-5xl text-navy mb-3">Contact ProExpress — 24/7 Expedite Freight Dispatch</h1>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">Our expedite transportation dispatch team is available 24 hours a day, 7 days a week, 365 days a year. Call us now or send a message for same-day freight delivery anywhere in the US.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
