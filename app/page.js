@@ -10,11 +10,26 @@ const PHONE = '414-324-9699'
 const TEL = 'tel:4143249699'
 
 const homeFAQs = [
-  { q: 'What is expedite transportation?', a: 'Expedite transportation is a specialized freight service designed for time-critical shipments that cannot wait for standard delivery schedules. It involves dedicated vehicles dispatched immediately to pick up and deliver your freight door-to-door, bypassing terminals and sorting facilities for maximum speed.' },
-  { q: 'How fast can ProExpress dispatch?', a: 'ProExpress can dispatch a vehicle within 30–90 minutes of receiving your request, 24 hours a day, 7 days a week, 365 days a year. Our large fleet of Sprinter vans and straight trucks are staged regionally to ensure the fastest possible response times across the Midwest and nationwide.' },
-  { q: 'Do you operate 24/7?', a: 'Yes — absolutely. ProExpress operates 24 hours a day, 7 days a week, 365 days a year. There are no holidays, no nights off, and no weekends when it comes to your critical freight. Our dispatch team is always live and ready to take your call.' },
-  { q: 'What states do you serve?', a: 'ProExpress serves all 48 contiguous United States. Whether you need a regional run across Wisconsin and Illinois or a cross-country haul from Milwaukee to Los Angeles, our fleet and network of drivers can handle it.' },
-  { q: 'How do I get a quote?', a: 'Getting a quote is simple. You can call us directly at 414-324-9699 for an instant quote over the phone, or fill out our online Quote Request form and a logistics specialist will respond within minutes. We provide competitive, transparent pricing with no hidden fees.' },
+  {
+    q: 'What is expedite transportation?',
+    a: 'Expedite transportation is the urgent, time-critical movement of freight that cannot wait for standard shipping schedules. ProExpress specializes in same-day and next-day expedite delivery using sprinter vans and straight trucks.',
+  },
+  {
+    q: 'How fast can ProExpress dispatch a vehicle?',
+    a: 'ProExpress can dispatch a vehicle within 1\u20132 hours of booking in most service areas. We operate 24/7/365 with no holidays or weekends off.',
+  },
+  {
+    q: 'Does ProExpress operate 24 hours a day?',
+    a: 'Yes. ProExpress is available 24 hours a day, 7 days a week, 365 days a year including all holidays. Call 414-324-9699 anytime.',
+  },
+  {
+    q: 'What states does ProExpress serve?',
+    a: 'ProExpress serves all 48 contiguous United States with local, regional, and national expedite freight routes.',
+  },
+  {
+    q: 'How do I get an expedite freight quote from ProExpress?',
+    a: 'You can request a free quote online via our Quote Request page or call us directly at 414-324-9699 for an immediate response.',
+  },
 ]
 
 const industries = [
