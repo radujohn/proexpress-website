@@ -98,12 +98,12 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/40 text-sm">&copy; 2025 ProExpress. All Rights Reserved.</p>
-          <div className="flex items-center gap-4 text-white/40 text-sm">
+          <p className="text-white/40 text-sm text-center sm:text-left">&copy; 2025 ProExpress. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-white/40 text-sm">
             <Link href="/faq" className="hover:text-white/70 transition-colors">FAQ</Link>
-            <span>|</span>
+            <span className="hidden sm:inline">|</span>
             <Link href="/contact" className="hover:text-white/70 transition-colors">Contact</Link>
-            <span>|</span>
+            <span className="hidden sm:inline">|</span>
             <Link href="/quote" className="hover:text-white/70 transition-colors">Get a Quote</Link>
           </div>
         </div>
