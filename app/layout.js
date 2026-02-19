@@ -94,10 +94,12 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{__html:'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"){e.stopImmediatePropagation();e.preventDefault()}},true);'}} />
       </head>
       <body className="font-sans bg-white text-gray-900 antialiased">
+        <GoogleAnalytics />
         <Navbar />
         <main>{children}</main>
         <Footer />
         <FloatingCallButton />
+        <CookieConsentBanner />
       </body>
     </html>
   )
