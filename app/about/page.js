@@ -117,12 +117,7 @@ export default function AboutPage() {
       <section className="py-14 bg-electric">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { stat: '20+', label: 'Years in Business' },
-              { stat: '100K+', label: 'Deliveries Completed' },
-              { stat: '24/7', label: 'Operations — Always On' },
-              { stat: '48', label: 'States Covered' },
-            ].map((s, i) => (
+            {(cms.stats || []).map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.1} className="text-center">
                 <div className="font-heading font-900 text-4xl sm:text-5xl text-white mb-1">{s.stat}</div>
                 <div className="text-white/70 text-sm font-medium">{s.label}</div>
@@ -136,21 +131,24 @@ export default function AboutPage() {
       <section className="py-20 bg-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">Our Mission & Values</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">The principles that have guided every decision for 20 years — and will guide the next 20.</p>
+            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">{cms.valuesTitle}</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">{cms.valuesSubtitle}</p>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v, i) => (
+            {(cms.values || []).map((v, i) => {
+              const Icon = valueIcons[i] || Award
+              return (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full">
                   <div className="w-12 h-12 bg-electric/10 rounded-xl flex items-center justify-center mb-4">
-                    <v.icon className="w-6 h-6 text-electric" />
+                    <Icon className="w-6 h-6 text-electric" />
                   </div>
                   <h3 className="font-heading font-800 text-lg text-navy mb-2">{v.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </AnimatedSection>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
