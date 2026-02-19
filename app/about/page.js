@@ -190,11 +190,11 @@ export default function AboutPage() {
       <section className="py-20 bg-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">Meet Our Leadership</h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">The experienced team behind 20 years of on-time performance.</p>
+            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-navy mb-4">{cms.teamTitle}</h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">{cms.teamSubtitle}</p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {team.map((member, i) => (
+            {(cms.team || []).map((member, i) => (
               <AnimatedSection key={i} delay={i * 0.15}>
                 <div className="bg-white rounded-2xl p-7 text-center shadow-sm border border-gray-100">
                   <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
